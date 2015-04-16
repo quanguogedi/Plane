@@ -92,4 +92,27 @@ private:
     int mCurrentPlane;
 };
 
+
+
+//杨延飞 添加
+class PlaneAttributeData : public CCObject
+{
+public:
+    char * mFile;
+    char * mName;
+    char * mDisc;
+    bool mIsCanUpgrade;//是否可以升级
+    int mCurrAttack;//当前等级的攻击力
+    int mNextAttack;//下一等级的攻击力
+    int mUpgradeCost;//升级所需钻石
+    
+};
+
+
+
+
+
+
+
+
 #endif /* defined(__Plane__GameData__) */

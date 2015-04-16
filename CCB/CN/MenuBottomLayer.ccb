@@ -104,7 +104,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>-100</real>
+							<real>0.0</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -223,7 +223,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>50</real>
+							<real>0.0</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -904,7 +904,7 @@
 										<key>value</key>
 										<array>
 											<string>res/view2.plist</string>
-											<string>button_002_qhzj.png</string>
+											<string>button_002_cj_n.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -914,8 +914,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<string></string>
+											<string>res/view2.plist</string>
+											<string>button_002_cj_s.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -925,8 +925,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<string></string>
+											<string>res/view2.plist</string>
+											<string>button_002_cj_s.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1017,7 +1017,7 @@
 										<key>value</key>
 										<array>
 											<string>res/view2.plist</string>
-											<string>button_002_qhzj.png</string>
+											<string>button_setting_n.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1027,8 +1027,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<string></string>
+											<string>res/view2.plist</string>
+											<string>button_setting_s.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1038,13 +1038,11 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<string></string>
+											<string>res/view2.plist</string>
+											<string>button_setting_s.png</string>
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -1158,7 +1156,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>50</real>
 							<real>50</real>
 							<integer>4</integer>
 						</array>
@@ -1348,7 +1346,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.26666668057441711</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

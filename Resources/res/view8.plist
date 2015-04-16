@@ -4,10 +4,62 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>setting_music_bg.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{94,2},{470,90}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{470,90}}</string>
+                <key>sourceSize</key>
+                <string>{470,90}</string>
+            </dict>
+            <key>setting_music_effect.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{470,90}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{470,90}}</string>
+                <key>sourceSize</key>
+                <string>{470,90}</string>
+            </dict>
+            <key>setting_setting.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{186,243},{378,99}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{378,99}}</string>
+                <key>sourceSize</key>
+                <string>{378,99}</string>
+            </dict>
+            <key>setting_sign.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{490,344},{67,69}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{67,69}}</string>
+                <key>sourceSize</key>
+                <string>{67,69}</string>
+            </dict>
             <key>view8_bar_0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{512,192},{172,14}}</string>
+                <string>{{2,474},{172,14}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +72,7 @@
             <key>view8_bar_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{512,208},{166,10}}</string>
+                <string>{{2,490},{166,10}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +85,7 @@
             <key>view8_border.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,142},{378,99}}</string>
+                <string>{{186,142},{378,99}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +98,7 @@
             <key>view8_cell.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{523,138}}</string>
+                <string>{{186,2},{523,138}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -56,14 +108,40 @@
                 <key>sourceSize</key>
                 <string>{523,138}</string>
             </dict>
-            <key>view8_finish.png</key>
+            <key>view8_close_n.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{527,2},{188,161}}</string>
+                <string>{{568,364},{80,76}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{80,76}}</string>
+                <key>sourceSize</key>
+                <string>{80,76}</string>
+            </dict>
+            <key>view8_close_s.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{490,413},{80,76}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{80,76}}</string>
+                <key>sourceSize</key>
+                <string>{80,76}</string>
+            </dict>
+            <key>view8_finish.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{186,344},{188,161}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{188,161}}</string>
                 <key>sourceSize</key>
@@ -72,7 +150,7 @@
             <key>view8_get_n.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{382,142},{128,109}}</string>
+                <string>{{566,253},{128,109}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,11 +163,11 @@
             <key>view8_get_s.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{690,2},{128,109}}</string>
+                <string>{{566,142},{128,109}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{128,109}}</string>
                 <key>sourceSize</key>
@@ -98,7 +176,7 @@
             <key>view8_sign.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{690,132},{112,112}}</string>
+                <string>{{376,364},{112,112}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -116,9 +194,9 @@
             <key>realTextureFileName</key>
             <string>view8.png</string>
             <key>size</key>
-            <string>{804,253}</string>
+            <string>{711,507}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:918b8d557908c8953967dc1cc08b6ee7:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:f7d53c25f6e1baa4eaa7c5e524a91381:1/1$</string>
             <key>textureFileName</key>
             <string>view8.png</string>
         </dict>

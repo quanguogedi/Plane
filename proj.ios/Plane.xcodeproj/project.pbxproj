@@ -274,6 +274,9 @@
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		C0EEDF541AE01102007C5069 /* LocalArchiveData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0EEDF521AE01102007C5069 /* LocalArchiveData.cpp */; };
+		C0EEDF551AE01102007C5069 /* LocalStaticData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0EEDF531AE01102007C5069 /* LocalStaticData.cpp */; };
+		C0EEDF591AE014B5007C5069 /* CocosSaveManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0EEDF581AE014B5007C5069 /* CocosSaveManager.cpp */; };
 		D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41A0AD0160F154A004552AE /* Default-568h@2x.png */; };
 		D446FD6E16102124000ADA7B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D446FD6D16102124000ADA7B /* Default@2x.png */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
@@ -851,6 +854,12 @@
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C0EEDF501AE01102007C5069 /* LocalArchiveData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalArchiveData.h; sourceTree = "<group>"; };
+		C0EEDF511AE01102007C5069 /* LocalStaticData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalStaticData.h; sourceTree = "<group>"; };
+		C0EEDF521AE01102007C5069 /* LocalArchiveData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocalArchiveData.cpp; sourceTree = "<group>"; };
+		C0EEDF531AE01102007C5069 /* LocalStaticData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocalStaticData.cpp; sourceTree = "<group>"; };
+		C0EEDF571AE014B5007C5069 /* CocosSaveManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSaveManager.h; sourceTree = "<group>"; };
+		C0EEDF581AE014B5007C5069 /* CocosSaveManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosSaveManager.cpp; sourceTree = "<group>"; };
 		CE2EF2711AB86A38000520EC /* PlaneNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlaneNotification.h; path = ../Classes/PlaneNotification.h; sourceTree = "<group>"; };
 		D41A0AD0160F154A004552AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../proj.ios/Default-568h@2x.png"; sourceTree = "<group>"; };
 		D446FD6D16102124000ADA7B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../proj.ios/Default@2x.png"; sourceTree = "<group>"; };
@@ -1381,7 +1390,7 @@
 			isa = PBXGroup;
 			children = (
 				3449FF6A1A738DE600913E7B /* Singleton.h */,
-				348CEDCE1A766C6600826B2C /* Game Data */,
+				348CEDCE1A766C6600826B2C /* GameData */,
 				3449FF651A7368D700913E7B /* Prototype Plane Data */,
 				344CF3381A7124E6006BED2C /* Level */,
 				B20E59F81A22388600D99106 /* Map */,
@@ -1557,13 +1566,19 @@
 			name = Level;
 			sourceTree = "<group>";
 		};
-		348CEDCE1A766C6600826B2C /* Game Data */ = {
+		348CEDCE1A766C6600826B2C /* GameData */ = {
 			isa = PBXGroup;
 			children = (
+				C0EEDF571AE014B5007C5069 /* CocosSaveManager.h */,
+				C0EEDF581AE014B5007C5069 /* CocosSaveManager.cpp */,
+				C0EEDF501AE01102007C5069 /* LocalArchiveData.h */,
+				C0EEDF521AE01102007C5069 /* LocalArchiveData.cpp */,
+				C0EEDF511AE01102007C5069 /* LocalStaticData.h */,
+				C0EEDF531AE01102007C5069 /* LocalStaticData.cpp */,
 				348CEDCF1A766C7F00826B2C /* GameData.cpp */,
 				348CEDD01A766C7F00826B2C /* GameData.h */,
 			);
-			name = "Game Data";
+			name = GameData;
 			sourceTree = "<group>";
 		};
 		375BD4BA1868411B0024609E /* Trigger */ = {
@@ -2211,6 +2226,7 @@
 				15A3D9A11682F7F9002FB0C5 /* cpSlideJoint.c in Sources */,
 				15A3D9A21682F7F9002FB0C5 /* cpArbiter.c in Sources */,
 				3449FF681A73690400913E7B /* PrototypeDataManager.cpp in Sources */,
+				C0EEDF591AE014B5007C5069 /* CocosSaveManager.cpp in Sources */,
 				15A3D9A31682F7F9002FB0C5 /* cpArray.c in Sources */,
 				B26DF37E19FCF77100752273 /* EnemyManager.cpp in Sources */,
 				15A3D9A41682F7F9002FB0C5 /* cpBB.c in Sources */,
@@ -2245,6 +2261,7 @@
 				15A3DA3A1682F826002FB0C5 /* CCData.cpp in Sources */,
 				15A3DA3B1682F826002FB0C5 /* CCLabelBMFontLoader.cpp in Sources */,
 				15A3DA3C1682F826002FB0C5 /* CCLabelTTFLoader.cpp in Sources */,
+				C0EEDF551AE01102007C5069 /* LocalStaticData.cpp in Sources */,
 				15A3DA3D1682F826002FB0C5 /* CCLayerColorLoader.cpp in Sources */,
 				15A3DA3E1682F826002FB0C5 /* CCLayerGradientLoader.cpp in Sources */,
 				B26DF38819FCF77100752273 /* ItemSprite.cpp in Sources */,
@@ -2321,6 +2338,7 @@
 				B2E7CE101AD7AB4000A0407E /* ChooseMapLayer.cpp in Sources */,
 				1A8F3B7C175E05DA00049216 /* Skeleton.cpp in Sources */,
 				1A8F3B7D175E05DA00049216 /* SkeletonData.cpp in Sources */,
+				C0EEDF541AE01102007C5069 /* LocalArchiveData.cpp in Sources */,
 				1A8F3B7E175E05DA00049216 /* SkeletonJson.cpp in Sources */,
 				1A8F3B7F175E05DA00049216 /* Skin.cpp in Sources */,
 				1A8F3B80175E05DA00049216 /* Slot.cpp in Sources */,
