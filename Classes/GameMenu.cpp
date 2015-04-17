@@ -32,7 +32,6 @@ bool CGameMenu::init()
         
 		CC_BREAK_IF(! CBaseScene::init());
         InitBackGround();
-//        InitTopLayer();
         InitBottomLayer();
         InitDisPlayLayer();
         

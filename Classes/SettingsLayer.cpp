@@ -8,36 +8,54 @@
 
 #include "SettingsLayer.h"
 
+bool SettingsLayer::init()
+{
+    if (!CCBLayer::init())
+    {
+        return false;
+    }
+    
+    mIsTheDialog = true;
+    mTouchLevel = 1;
+    return true;
+}
+
+
 bool SettingsLayer::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode)
 {
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "Menu", CCMenu*, mMenu);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "MusicSign", CCSprite*, mMusicSign);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "SoundSign", CCSprite*, mSoundSign);
     return false;
 }
 SEL_MenuHandler SettingsLayer::onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName)
 {
-    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "OnTouchCloseButton", SettingsLayer::OnTouchCloseButton);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "MusicSelector", SettingsLayer::MusicSelector);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "SoundSelector", SettingsLayer::SoundSelector);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "CloseSelector", SettingsLayer::CloseSelector);
+
 
     return false;
 }
 
-SEL_CCControlHandler SettingsLayer::onResolveCCBCCControlSelector(CCObject * pTarget, const char* pSelectorName)
+void SettingsLayer::MusicSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
 {
-    return false;
+    mMusicSign->setVisible(!mMusicSign->isVisible());
 }
 
-void SettingsLayer::onNodeLoaded(CCNode * pNode, CCNodeLoader * pNodeLoader)
+
+void SettingsLayer::SoundSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
 {
-    
+    mSoundSign->setVisible(!mSoundSign->isVisible());
 }
 
-void SettingsLayer::Close()
+void SettingsLayer::CloseSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
 {
-    if(mDelegate)
+    if (mDelegate)
     {
         mDelegate->HideLayer();
     }
 }
 
-void SettingsLayer::OnTouchCloseButton(CCObject *pSender, CCControlEvent pCCControlEvent)
-{
-    Close();
-}
+
+

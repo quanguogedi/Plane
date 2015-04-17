@@ -8,41 +8,34 @@
 
 #include "AchievementCell.h"
 
+void AchievementCell::onEnter()
+{
+    CCBLayer::onEnter();
+    mMenu->setTouchPriority(-133);
+}
 
 bool AchievementCell::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode)
 {
-    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "nameLabel", CCLabelTTF*, mNameLabel);
-    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "descLabel", CCLabelTTF*, mDescLabel);
-    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "resultLabel", CCLabelTTF*, mResultLabel);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "NameLabel", CCLabelTTF*, mNameLabel);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "DescLabel", CCLabelTTF*, mDescLabel);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "ResultLabel", CCLabelTTF*, mResultLabel);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "ProgressLabel", CCLabelTTF*, mProgressLabel);
+
     
-    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "progressNode",  CCNode*, mProgressNode);
-    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "progressLabel", CCLabelTTF*, mProgressLabel);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "FinishSprite",  CCSprite*, mFinishSprite);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "ProgressSprite",  CCSprite*, mProgressSprite);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "ProgressBar",  CCSprite*, mProgressBar);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "Menu",  CCMenu*, mMenu);
     
-    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "getNode",  CCNode*, mGetNode);
-    
-    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "finishedNode", CCNode*, mFinishedNode);
  
     return false;
 }
 
 SEL_MenuHandler AchievementCell::onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName)
 {
-    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "OnTouchGetResultButton", AchievementCell::OnTouchGetResultButton);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "GetSelector", AchievementCell::GetSelector);
     return false;
 }
-
-SEL_CCControlHandler AchievementCell::onResolveCCBCCControlSelector(CCObject * pTarget, const char* pSelectorName)
-{
-    
-    return false;
-}
-
-void AchievementCell::onNodeLoaded(CCNode * pNode, CCNodeLoader * pNodeLoader)
-{
-    
-}
-
-//////////////////
 
 void AchievementCell::SetCell(PrototypeAchievementData* data)
 {
@@ -60,7 +53,7 @@ void AchievementCell::SetCell(PrototypeAchievementData* data)
 
 /////////////////////
 
-void AchievementCell::OnTouchGetResultButton(CCObject *pSender, CCControlEvent pCCControlEvent)
+void AchievementCell::GetSelector(CCObject *pSender, CCControlEvent pCCControlEvent)
 {
-    
+    CCLog("AchievementCell  get selector");
 }

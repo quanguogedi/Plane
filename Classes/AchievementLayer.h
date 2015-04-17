@@ -15,6 +15,7 @@
 class AchievementLayer : public CCBLayer, public CCScrollViewDelegate
 {
 public:
+    virtual bool init();
     CREATE_FUNC(AchievementLayer);
     
     virtual bool onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode);
@@ -22,18 +23,16 @@ public:
     virtual SEL_CCControlHandler onResolveCCBCCControlSelector(CCObject * pTarget, const char* pSelectorName);
     virtual void onNodeLoaded(CCNode * pNode, CCNodeLoader * pNodeLoader);
     
-    virtual void scrollViewDidScroll(cocos2d::extension::CCScrollView *view);
-    virtual void scrollViewDidZoom(cocos2d::extension::CCScrollView *view);
+    virtual void scrollViewDidScroll(cocos2d::extension::CCScrollView *view){};
+    virtual void scrollViewDidZoom(cocos2d::extension::CCScrollView *view){};
+    void BackSelector(CCObject *pSender, CCControlEvent pCCControlEvent);
     
 private:
     void InitAchievementList();
     
-    void Close();
     
 private:
-    void OnTouchCloseButton(CCObject *pSender, CCControlEvent pCCControlEvent);
-    
-private:
+    CCSprite * mBorderSprite;
     CCLabelTTF* mDiamondLabel;
     
     CCScrollView* mAchievemenListScrollView;

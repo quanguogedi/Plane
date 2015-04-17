@@ -146,8 +146,64 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
+				<key>animatedProperties</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>position</key>
+						<dict>
+							<key>keyframes</key>
+							<array>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>opt</key>
+										<real>0.30000001192092896</real>
+										<key>type</key>
+										<integer>6</integer>
+									</dict>
+									<key>name</key>
+									<string>position</string>
+									<key>time</key>
+									<real>0.0</real>
+									<key>type</key>
+									<integer>3</integer>
+									<key>value</key>
+									<array>
+										<real>100</real>
+										<real>50</real>
+									</array>
+								</dict>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>1</integer>
+									</dict>
+									<key>name</key>
+									<string>position</string>
+									<key>time</key>
+									<real>0.26666668057441711</real>
+									<key>type</key>
+									<integer>3</integer>
+									<key>value</key>
+									<array>
+										<real>50</real>
+										<real>50</real>
+									</array>
+								</dict>
+							</array>
+							<key>name</key>
+							<string>position</string>
+							<key>type</key>
+							<integer>3</integer>
+						</dict>
+					</dict>
+				</dict>
 				<key>baseClass</key>
 				<string>CCLayer</string>
 				<key>children</key>
@@ -413,7 +469,7 @@
 												<string>Block</string>
 												<key>value</key>
 												<array>
-													<string>ScoundSelector</string>
+													<string>SoundSelector</string>
 													<integer>1</integer>
 												</array>
 											</dict>
@@ -557,7 +613,7 @@
 												<key>value</key>
 												<array>
 													<string>res/view8.plist</string>
-													<string>view8_get_s.png</string>
+													<string>view8_close_s.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -568,7 +624,7 @@
 												<key>value</key>
 												<array>
 													<string>res/view8.plist</string>
-													<string>view8_get_s.png</string>
+													<string>view8_close_s.png</string>
 												</array>
 											</dict>
 										</array>
@@ -579,9 +635,9 @@
 								<key>displayName</key>
 								<string>CCMenu</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>Menu</string>
 								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
+								<integer>1</integer>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -672,7 +728,7 @@
 								<key>displayName</key>
 								<string>setting_sign</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>MusicSign</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -733,8 +789,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>baseClass</key>
@@ -746,7 +800,7 @@
 								<key>displayName</key>
 								<string>setting_sign</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>SoundSign</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -888,6 +942,11 @@
 				<key>properties</key>
 				<array>
 					<dict>
+						<key>baseValue</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+						</array>
 						<key>name</key>
 						<string>position</string>
 						<key>type</key>
@@ -964,6 +1023,8 @@
 						<true/>
 					</dict>
 				</array>
+				<key>seqExpanded</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -1065,7 +1126,7 @@
 	<array>
 		<dict>
 			<key>autoPlay</key>
-			<true/>
+			<false/>
 			<key>callbackChannel</key>
 			<dict>
 				<key>keyframes</key>
@@ -1076,13 +1137,13 @@
 			<key>chainedSequenceId</key>
 			<integer>-1</integer>
 			<key>length</key>
-			<real>10</real>
+			<real>0.26666668057441711</real>
 			<key>name</key>
-			<string>Default Timeline</string>
+			<string>Show</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.26666668057441711</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

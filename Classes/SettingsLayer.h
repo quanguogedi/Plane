@@ -15,19 +15,21 @@
 class SettingsLayer : public CCBLayer
 {
 public:
+    virtual bool init();
     CREATE_FUNC(SettingsLayer);
     
     virtual bool onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode);
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName);
-    virtual SEL_CCControlHandler onResolveCCBCCControlSelector(CCObject * pTarget, const char* pSelectorName);
-    virtual void onNodeLoaded(CCNode * pNode, CCNodeLoader * pNodeLoader);
+    
+    void MusicSelector(CCObject *pSender, CCControlEvent pCCControlEvent);
+    void SoundSelector(CCObject *pSender, CCControlEvent pCCControlEvent);
+    void CloseSelector(CCObject *pSender, CCControlEvent pCCControlEvent);
+    
     
     
 private:
-    void Close();
-    
-private:
-    void OnTouchCloseButton(CCObject *pSender, CCControlEvent pCCControlEvent);
+    CCSprite * mMusicSign;
+    CCSprite * mSoundSign;
 
 };
 

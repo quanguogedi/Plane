@@ -7,6 +7,7 @@
 #include "BuyDiamondLayer.h"
 #include "BuyPowerLayer.h"
 #include "UpgradeLayer.h"
+#include "PlanAttributeLayer.h"
 
 
 class CGameLevel : public CBaseScene
@@ -34,6 +35,10 @@ public:
     
 
 private:
+    
+    void InitBottomLayer();
+    
+    
 	/**	选择关卡的回调函数	*/
 	void setLevelMode(CCObject* pSender);
 

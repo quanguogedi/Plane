@@ -16,28 +16,26 @@ class AchievementCell : public CCBLayer
 {
 public:
     CREATE_FUNC(AchievementCell);
+    
+    virtual void onEnter();
     virtual bool onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode);
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName);
-    virtual SEL_CCControlHandler onResolveCCBCCControlSelector(CCObject * pTarget, const char* pSelectorName);
-    virtual void onNodeLoaded(CCNode * pNode, CCNodeLoader * pNodeLoader);
+    
+    void GetSelector(CCObject *pSender, CCControlEvent pCCControlEvent);
 
 public:
     void SetCell(PrototypeAchievementData* data);
     
-private:
-    void OnTouchGetResultButton(CCObject *pSender, CCControlEvent pCCControlEvent);
     
 private:
     CCLabelTTF* mNameLabel;
     CCLabelTTF* mDescLabel;
     CCLabelTTF* mResultLabel;
-    
-    CCNode* mProgressNode;
     CCLabelTTF* mProgressLabel;
     
-    CCNode* mGetNode;
-    
-    CCNode* mFinishedNode;
+    CCSprite * mFinishSprite;
+    CCSprite * mProgressSprite;
+    CCSprite * mProgressBar;
 };
 
 
