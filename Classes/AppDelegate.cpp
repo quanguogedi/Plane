@@ -4,8 +4,7 @@
 #include "Common.h"
 
 #include "LevelData.h"
-#include "PrototypeDataManager.h"
-#include "GameData.h"
+
 
 
 AppDelegate::AppDelegate() {
@@ -32,12 +31,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	CCSize designSize = CCSizeMake(SCREEN_W, SCREEN_H);
     pEGLView->setDesignResolutionSize(designSize.width, designSize.height, kResolutionShowAll);
   
-    
+    LocalStaticData::Initialize();
+    LocalArchiveData::Initialize();
     LevelManager::Initialize();
     PrototypeDataManager::Initialize();
-    GameDataManager::Initialize();
-    
-    
+//    GameDataManager::Initialize();
+    DataManager::Initialize();
 	// create a scene. it's an autorelease object
 	CCScene *pScene = CLoadLogo::scene();
 

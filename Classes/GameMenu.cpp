@@ -134,10 +134,16 @@ void CGameMenu::InitBackGround()
     CCSize size = CCDirector::sharedDirector()->getWinSize();
 //    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("res/Resources/ui_beijing.plist", "res/Resources/ui_beijing.png");
     
-    CCSprite* pSprite = CCSprite::create("res/ui_bj_01.png");
-    pSprite->setScale(1.34);
-    pSprite->setPosition(ccp(size.width/2, size.height/2));
-    addChild(pSprite);
+    mBgSprite1 = CCSprite::create("res/ui_bj_01.png");
+    mBgSprite1->setScale(size.height/mBgSprite1->getContentSize().height);
+    mBgSprite1->setPosition(ccp(size.width/2, size.height/2));
+    addChild(mBgSprite1);
+    
+    
+    mBgSprite2 = CCSprite::create("res/ui_bj_01.png");
+    mBgSprite2->setScale(size.height/mBgSprite2->getContentSize().height);    mBgSprite2->setPosition(ccp(size.width/2, -size.height/2));
+    mBgSprite2->setFlipY(true);
+    addChild(mBgSprite2);
 }
 
 //void CGameMenu::InitTopLayer()

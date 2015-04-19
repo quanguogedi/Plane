@@ -34,6 +34,8 @@ private:
     CCSprite * mAtkSprite4;
     CCSprite * mHpSprite;
     
+    int mFight;
+    int mMaxFight;
     
     int mCurrentPlaneType;
 };

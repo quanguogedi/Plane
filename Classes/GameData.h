@@ -9,18 +9,12 @@
 #ifndef __Plane__GameData__
 #define __Plane__GameData__
 
-#include <stdio.h>
 #include "Singleton.h"
-
 #include "cocos2d.h"
 USING_NS_CC;
 
-class PlayerData : public CCObject
-{
-    
-};
 
-class PlayerPlaneData : public PlayerData
+class PlayerPlaneData : public CCObject
 {
 public:
     static PlayerPlaneData* create(int planeType, int attack = 1, int subMissileAttack = 1, int planeHP = 1, int wingAttack = 1);
@@ -35,7 +29,7 @@ public:
 
 };
 
-class PlayerAchievementData : public PlayerData
+class PlayerAchievementData : public CCObject
 {
 public:
     int mAchievementID;
@@ -95,18 +89,23 @@ private:
 
 
 //杨延飞 添加
-class PlaneAttributeData : public CCObject
+class UpgradeData : public CCObject
 {
 public:
-    char * mFile;
-    char * mName;
-    char * mDisc;
-    bool mIsCanUpgrade;//是否可以升级
-    int mCurrAttack;//当前等级的攻击力
-    int mNextAttack;//下一等级的攻击力
-    int mUpgradeCost;//升级所需钻石
+    UpgradeData(const char * _bigFile,const char * _smallFile, const char * _name,const char * _disc, int _currValue,int _nextValue,int _maxValue,bool _isCanUp,int _upCost);
+    
+    char mBigFile[64];
+    char mSmallFile[64];
+    char mName[64];
+    char mDisc[512];
+    bool mIsCanUp;//是否可以升级
+    int mCurrValue;//当前等级的攻击力
+    int mNextValue;//下一等级的攻击力
+    int mMaxValue;//最大的攻击力
+    int mUpCost;//升级所需钻石
     
 };
+
 
 
 

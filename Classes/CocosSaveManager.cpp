@@ -170,7 +170,7 @@ void    CocosSaveManager::setBoolForKey(const char* pKey, bool value)
 
 void    CocosSaveManager::setIntegerForKey(const char* pKey, int value)
 {
-//    CCLog("%s",value2string(value).c_str());
+    CCLog("%s",value2string(value).c_str());
     setStringForKey(pKey, value2string(value));
 }
 
@@ -189,6 +189,9 @@ void CocosSaveManager::setStringForKey(const char* pKey, const std::string & val
 //    string saveOrg =   CCUserDefault::sharedUserDefault()->getStringForKey("bvjOiLwe");
 //    mSaveString = CocosParseData(saveOrg);
 //      CCLog("setStringForKe1%s",mSaveString.c_str());
+    CCLog("===-==========");
+    CCLog("===%s",mSaveString.c_str());
+    CCLog("===-==========");
     if (mSaveString.find(pKey) == string::npos)
     {
         mSaveString.append(pKey);

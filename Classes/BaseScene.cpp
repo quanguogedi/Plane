@@ -38,6 +38,18 @@ bool CBaseScene::init()
     return true;
 }
 
+
+void CBaseScene::onEnter()
+{
+    CCLayer::onEnter();
+    scheduleUpdate();
+}
+
+void CBaseScene::onExit()
+{
+    unscheduleUpdate();
+}
+
 void CBaseScene::ShowLayer(CCBLayer *_layer)
 {
     
@@ -75,8 +87,32 @@ void CBaseScene::HideLayer()
     {
         mLayerStack.top()->Show();
     }
-    
-    
 
+}
+
+void CBaseScene::update(float _time)
+{
+    if (!mBgSprite1 || !mBgSprite2)
+    {
+        unscheduleUpdate();
+        return;
+    }
+    
+    float Y1 = mBgSprite1->getPositionY();
+    float Y2 = mBgSprite2->getPositionY();
+    Y1+=0.2;
+    Y2+=0.2;
+    CCSize size = CCDirector::sharedDirector()->getWinSize();
+    if (Y1>=size.height*1.5)
+    {
+        Y1=-size.height*0.5;
+    }
+    if (Y2>=size.height*1.5)
+    {
+        Y2=-size.height*0.5;
+    }
+   
+    mBgSprite1->setPositionY(Y1+0.1);
+    mBgSprite2->setPositionY(Y2+0.1);
 }
 

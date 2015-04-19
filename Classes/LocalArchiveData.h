@@ -17,13 +17,18 @@ class LocalArchiveData
 {
     DECLARE_SINGLETON(LocalArchiveData);
 public:
+    LocalArchiveData();
     bool mIsScoundEnable;//是否能播放音效
     bool mIsMusicEnable;//是否能播放背景音乐
     int mFinishLevel;//闯关数
+    
    
     
     void LoadArchiveData();
     void SaveArchiveData();
+    
+    void SavePlayerData(int _type,int _value);
+    int GetPlayerDataByType(int _type);
     
     void SaveLevelStar(int _level,int _star);
     int LoadLevelStar(int _level);

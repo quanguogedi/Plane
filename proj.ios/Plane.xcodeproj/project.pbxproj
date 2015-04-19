@@ -252,6 +252,7 @@
 		B27C84871ADD6575003328F6 /* CN in Resources */ = {isa = PBXBuildFile; fileRef = B27C84841ADD6575003328F6 /* CN */; };
 		B27C84881ADD6575003328F6 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = B27C84851ADD6575003328F6 /* fileLookup.plist */; };
 		B27C84891ADD6575003328F6 /* font in Resources */ = {isa = PBXBuildFile; fileRef = B27C84861ADD6575003328F6 /* font */; };
+		B294D92F1AE3976C001E3743 /* DataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B294D92D1AE3976C001E3743 /* DataManager.cpp */; };
 		B2E7CDFE1AD7A2BB00A0407E /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CDFC1AD7A2BB00A0407E /* BaseScene.cpp */; };
 		B2E7CE061AD7AB1D00A0407E /* AchievementCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE021AD7AB1D00A0407E /* AchievementCell.cpp */; };
 		B2E7CE071AD7AB1D00A0407E /* AchievementLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE041AD7AB1D00A0407E /* AchievementLayer.cpp */; };
@@ -813,6 +814,8 @@
 		B27C84841ADD6575003328F6 /* CN */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CN; sourceTree = "<group>"; };
 		B27C84851ADD6575003328F6 /* fileLookup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fileLookup.plist; sourceTree = "<group>"; };
 		B27C84861ADD6575003328F6 /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
+		B294D92D1AE3976C001E3743 /* DataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataManager.cpp; path = ../Classes/DataManager.cpp; sourceTree = "<group>"; };
+		B294D92E1AE3976C001E3743 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = ../Classes/DataManager.h; sourceTree = "<group>"; };
 		B2E7CDFC1AD7A2BB00A0407E /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseScene.cpp; path = ../Classes/BaseScene.cpp; sourceTree = "<group>"; };
 		B2E7CDFD1AD7A2BB00A0407E /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseScene.h; path = ../Classes/BaseScene.h; sourceTree = "<group>"; };
 		B2E7CE021AD7AB1D00A0407E /* AchievementCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AchievementCell.cpp; path = ../Classes/AchievementCell.cpp; sourceTree = "<group>"; };
@@ -1577,6 +1580,8 @@
 				C0EEDF531AE01102007C5069 /* LocalStaticData.cpp */,
 				348CEDCF1A766C7F00826B2C /* GameData.cpp */,
 				348CEDD01A766C7F00826B2C /* GameData.h */,
+				B294D92D1AE3976C001E3743 /* DataManager.cpp */,
+				B294D92E1AE3976C001E3743 /* DataManager.h */,
 			);
 			name = GameData;
 			sourceTree = "<group>";
@@ -2081,6 +2086,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = DQFN4YWWVL;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Plane" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2280,6 +2290,7 @@
 				15A3DA4A1682F826002FB0C5 /* CCControlButton.cpp in Sources */,
 				15A3DA4B1682F826002FB0C5 /* CCControlColourPicker.cpp in Sources */,
 				15A3DA4C1682F826002FB0C5 /* CCControlHuePicker.cpp in Sources */,
+				B294D92F1AE3976C001E3743 /* DataManager.cpp in Sources */,
 				348CEDD11A766C7F00826B2C /* GameData.cpp in Sources */,
 				375BD50F1868454E0024609E /* CCActionFrame.cpp in Sources */,
 				15A3DA4D1682F826002FB0C5 /* CCControlPotentiometer.cpp in Sources */,
@@ -2446,7 +2457,7 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
 					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
@@ -2494,7 +2505,7 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
 					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",

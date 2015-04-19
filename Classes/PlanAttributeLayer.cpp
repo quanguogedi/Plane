@@ -42,43 +42,38 @@ bool PlanAttributeLayer::onAssignCCBMemberVariable(CCObject* pTarget, const char
 
 void PlanAttributeLayer::RefreshUI()
 {
-    int currentPlaneType = GameDataManager::GetSingleton().GetCurrentPlane();
-    PlayerPlaneData* planeData = GameDataManager::GetSingleton().GetPlayerPlaneData(currentPlaneType);
+//    int currentPlaneType = GameDataManager::GetSingleton().GetCurrentPlane();
+//    PlayerPlaneData* planeData = GameDataManager::GetSingleton().GetPlayerPlaneData(currentPlaneType);
+//    
+    UpgradeData * data1 = DataManager::GetInstance()->GetUpgradeData(1);
+    UpgradeData * data2 = DataManager::GetInstance()->GetUpgradeData(2);
+    UpgradeData * data3 = DataManager::GetInstance()->GetUpgradeData(3);
+    UpgradeData * data4 = DataManager::GetInstance()->GetUpgradeData(4);
     
-    int attack = PrototypeDataManager::GetSingleton().GetPlayerPlaneData(currentPlaneType, planeData->mAttackLevel)->mAttack;
     
-    int maxAttack = PrototypeDataManager::GetSingleton().GetPlayerPlaneData(currentPlaneType, 6)->mAttack;
+
     
-    mAtkLabel1->setString(CCString::createWithFormat("%d",attack)->getCString());
+    mAtkLabel1->setString(CCString::createWithFormat("%d",data1->mCurrValue)->getCString());
     mAtkSprite1->setScaleX(0);
-    mAtkSprite1->runAction(CCSequence::create(CCDelayTime::create(0.2),CCScaleTo::create(0.3, (float)attack/maxAttack,1),NULL));
+    mAtkSprite1->runAction(CCSequence::create(CCDelayTime::create(0.2),CCScaleTo::create(0.3, (float)data1->mCurrValue/data1->mMaxValue,1),NULL));
     
-    int subMissileAttack = PrototypeDataManager::GetSingleton().GetPlayerPlaneData(currentPlaneType, planeData->mSubMissileAttackLevel)->mSubMissileAttack;
     
-    int maxSubMissileAttack = PrototypeDataManager::GetSingleton().GetPlayerPlaneData(currentPlaneType, 6)->mSubMissileAttack;
-    
-    mAtkLabel2->setString(CCString::createWithFormat("%d",subMissileAttack)->getCString());
+    mAtkLabel2->setString(CCString::createWithFormat("%d",data2->mCurrValue)->getCString());
     mAtkSprite2->setScaleX(0);
-    mAtkSprite2->runAction(CCSequence::create(CCDelayTime::create(0.2),CCScaleTo::create(0.3, (float)subMissileAttack/maxSubMissileAttack,1),NULL));
+    mAtkSprite2->runAction(CCSequence::create(CCDelayTime::create(0.2),CCScaleTo::create(0.3, (float)data2->mCurrValue/data2->mMaxValue,1),NULL));
 
-    int hp = PrototypeDataManager::GetSingleton().GetPlayerPlaneData(currentPlaneType, planeData->mPlaneHPLevel)->mPlaneHP;
-    
-    int maxHp = PrototypeDataManager::GetSingleton().GetPlayerPlaneData(currentPlaneType,6)->mPlaneHP;
-  
-    mHpLabel->setString(CCString::createWithFormat("%d",hp)->getCString());
+
+    mHpLabel->setString(CCString::createWithFormat("%d",data3->mCurrValue)->getCString());
     mHpSprite->setScaleX(0);
-    mHpSprite->runAction(CCSequence::create(CCDelayTime::create(0.2),CCScaleTo::create(0.3, (float)hp/maxHp,1),NULL));
+    mHpSprite->runAction(CCSequence::create(CCDelayTime::create(0.2),CCScaleTo::create(0.3, (float)data3->mCurrValue/data3->mMaxValue,1),NULL));
 
-    
-    int wingAgttack = PrototypeDataManager::GetSingleton().GetPlayerPlaneData(currentPlaneType, planeData->mWingAttackLevel)->mWingAttack;
-    int maxWingAgttack = PrototypeDataManager::GetSingleton().GetPlayerPlaneData(currentPlaneType, 6)->mWingAttack;
 
-    mAtkLabel3->setString(CCString::createWithFormat("%d",wingAgttack)->getCString());
+    mAtkLabel3->setString(CCString::createWithFormat("%d",data4->mCurrValue)->getCString());
     mAtkSprite3->setScaleX(0);
-    mAtkSprite3->runAction(CCSequence::create(CCDelayTime::create(0.2),CCScaleTo::create(0.3, (float)wingAgttack/maxWingAgttack,1),NULL));
-    
-    int fight = attack + subMissileAttack + hp + wingAgttack;
-    int maxFight = maxAttack + maxSubMissileAttack + maxHp + maxWingAgttack;
+    mAtkSprite3->runAction(CCSequence::create(CCDelayTime::create(0.2),CCScaleTo::create(0.3, (float)data4->mCurrValue/data4->mMaxValue,1),NULL));
+
+    int fight = data1->mCurrValue + data2->mCurrValue + data3->mCurrValue + data4->mCurrValue;
+    int maxFight = data1->mMaxValue + data2->mMaxValue + data3->mMaxValue + data4->mMaxValue;
 
     mAtkLabel4->setString(CCString::createWithFormat("%d",fight)->getCString());
     mAtkSprite4->setScaleX(0);
@@ -87,6 +82,42 @@ void PlanAttributeLayer::RefreshUI()
 
 void PlanAttributeLayer::RefreshAttribute(cocos2d::CCObject *_obj)
 {
-    CCLog("-----------%d",(((CCString*)_obj)->intValue()));
+    int type = ((CCString*)_obj)->intValue();
+    UpgradeData * data = DataManager::GetInstance()->GetUpgradeData(type);
+    switch (type)
+    {
+        case 1:
+            mAtkLabel1->setString(CCString::createWithFormat("%d",data->mCurrValue)->getCString());
+            mAtkSprite1->runAction(CCScaleTo::create(0.3, (float)data->mCurrValue/data->mMaxValue,1));;
+            break;
+        case 2:
+            mAtkLabel2->setString(CCString::createWithFormat("%d",data->mCurrValue)->getCString());
+            mAtkSprite2->runAction(CCScaleTo::create(0.3, (float)data->mCurrValue/data->mMaxValue,1));;
+            break;
+        case 3:
+            mHpLabel->setString(CCString::createWithFormat("%d",data->mCurrValue)->getCString());
+
+            mHpSprite->runAction(CCScaleTo::create(0.3, (float)data->mCurrValue/data->mMaxValue,1));;
+            break;
+        case 4:
+            mAtkLabel3->setString(CCString::createWithFormat("%d",data->mCurrValue)->getCString());
+            mAtkSprite3->runAction(CCScaleTo::create(0.3, (float)data->mCurrValue/data->mMaxValue,1));;
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    UpgradeData * data1 = DataManager::GetInstance()->GetUpgradeData(1);
+    UpgradeData * data2 = DataManager::GetInstance()->GetUpgradeData(2);
+    UpgradeData * data3 = DataManager::GetInstance()->GetUpgradeData(3);
+    UpgradeData * data4 = DataManager::GetInstance()->GetUpgradeData(4);
+    
+    int fight = data1->mCurrValue + data2->mCurrValue + data3->mCurrValue + data4->mCurrValue;
+    int maxFight = data1->mMaxValue + data2->mMaxValue + data3->mMaxValue + data4->mMaxValue;
+    
+    mAtkLabel4->setString(CCString::createWithFormat("%d",fight)->getCString());
+    mAtkSprite4->runAction(CCScaleTo::create(0.3, (float)fight/maxFight,1));
 }
 

@@ -34,6 +34,9 @@ public:
     
 private:
     CCLabelTTF* mValueLabel;
+    CCLabelTTF* mNameLabel;
+    CCLabelTTF* mDiamondLabel;
+    CCLabelTTF* mDiscLabel;
     CCSprite * mSign;
     int mCurrentTab;
 };

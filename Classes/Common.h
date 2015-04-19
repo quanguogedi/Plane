@@ -37,7 +37,13 @@ USING_NS_CC_EXT;
 
 using namespace std;
 
+#include <string.h>
+
 #include "GameData.h"
+#include "LocalStaticData.h"
+#include "LocalArchiveData.h"
+#include "DataManager.h"
+
 
 #include "PrototypeDataManager.h"
 

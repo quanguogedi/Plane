@@ -25,6 +25,8 @@ public:
     /**	初始化函数	*/
     virtual bool init();
     
+    virtual void onEnter();
+    virtual void onExit();
     /**	创建函数	*/
     CREATE_FUNC(CBaseScene);
     
@@ -35,8 +37,13 @@ public:
     
     virtual void SwitchToPrevScene(){};//返回到上一个场景
     
+    virtual void update(float _time);
+    void UpdateBg(float _time);
+    
 public:
     stack<CCBLayer*> mLayerStack;
+    CCSprite * mBgSprite1;
+    CCSprite * mBgSprite2;
 };
 
 #endif /* defined(__Plane__BaseScene__) */
