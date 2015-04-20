@@ -18,6 +18,8 @@ CCScene* CGameLevel::scene()
 
 		scene->addChild(layer);
 	} while (0);
+    
+    
 
 	return scene;
 }
@@ -33,6 +35,21 @@ bool CGameLevel::init()
         pSprite->setScale(1.34);
         pSprite->setPosition(ccp(size.width/2, size.height/2));
         this->addChild(pSprite);
+        
+        
+        
+        CCNode * container = CCBManager::LoadCCBByNameAndLoader("LevelListLayer", LevelListLayerLoader::loader());
+        
+        CCScrollView * scrollView = CCScrollView::create(size, container);
+        scrollView->setTouchEnabled(true);
+        scrollView->setTouchPriority(-130);
+        //    scrollView->setDelegate(this);
+        scrollView->setDirection(kCCScrollViewDirectionVertical);
+        scrollView->setPosition(ccp(0, 50));
+        scrollView->setContentOffset(CCPointZero);
+        
+        this->addChild(scrollView);
+        
         
         
         InitBottomLayer();

@@ -10,36 +10,36 @@
 
 bool LevelListLayer::init()
 {
-    if (!CCLayer::init())
+    if (!CCBLayer::init())
     {
         return false;
     }
     
     CCSize size = CCSizeMake(SCREEN_W, SCREEN_H);
     
-    mContainerNode = CCNode::create();
-    
-    mLevelListScrollView = CCScrollView::create(size, mContainerNode);
-    mLevelListScrollView->setTouchEnabled(true);
-    mLevelListScrollView->setDelegate(this);
-    mLevelListScrollView->setDirection(kCCScrollViewDirectionVertical);
-    
-    
-    
-    addChild(mLevelListScrollView);
-    
+//    mContainerNode = CCNode::create();
+//    
+//    mLevelListScrollView = CCScrollView::create(size, mContainerNode);
+//    mLevelListScrollView->setTouchEnabled(true);
+//    mLevelListScrollView->setDelegate(this);
+//    mLevelListScrollView->setDirection(kCCScrollViewDirectionVertical);
+//    
+//    
+//    
+//    addChild(mLevelListScrollView);
+//    
     return true;
 }
 
-void LevelListLayer::scrollViewDidScroll(cocos2d::extension::CCScrollView *view)
-{
-    
-}
-
-void LevelListLayer::scrollViewDidZoom(cocos2d::extension::CCScrollView *view)
-{
-    
-}
+//void LevelListLayer::scrollViewDidScroll(cocos2d::extension::CCScrollView *view)
+//{
+//    
+//}
+//
+//void LevelListLayer::scrollViewDidZoom(cocos2d::extension::CCScrollView *view)
+//{
+//    
+//}
 
 
 void LevelListLayer::AddSubCell(CCNode* cell)
