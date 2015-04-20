@@ -50,13 +50,13 @@ private:
      
      */
     
-    void AddMainPlaneData(int _type,int _level,const char * _bigFile,const char * _smallFile,const char * _name,const char * _disc, int _currValue,int _nextValue,int _maxValue,bool _isCanUp,int _upCost);
+    void AddMainPlaneData(int _type,int _level,const char * _smallFile,const char * _name,const char * _disc, int _currValue,int _nextValue,int _maxValue,bool _isCanUp,int _upCost,int _upMaxCost);
     
-    void AddWingPlaneData(int _type,int _level,const char * _bigFile,const char * _smallFile,const char * _name,const char * _disc, int _currValue,int _nextValue,int _maxValue,bool _isCanUp,int _upCost);
+    void AddWingPlaneData(int _type,int _level,const char * _smallFile,const char * _name,const char * _disc, int _currValue,int _nextValue,int _maxValue,bool _isCanUp,int _upCost,int _upMaxCost);
     
-    void AddArmorData(int _type,int _level,const char * _bigFile,const char * _smallFile,const char * _name,const char * _disc, int _currValue,int _nextValue,int _maxValue,bool _isCanUp,int _upCost);
+    void AddArmorData(int _type,int _level,const char * _smallFile,const char * _name,const char * _disc, int _currValue,int _nextValue,int _maxValue,bool _isCanUp,int _upCost,int _upMaxCost);
     
-    void AddMissileData(int _type,int _level,const char * _bigFile,const char * _smallFile,const char * _name,const char * _disc, int _currValue,int _nextValue,int _maxValue,bool _isCanUp,int _upCost);
+    void AddMissileData(int _type,int _level,const char * _smallFile,const char * _name,const char * _disc, int _currValue,int _nextValue,int _maxValue,bool _isCanUp,int _upCost,int _upMaxCost);
 
 private:
     CCDictionary * mMainPlaneDic;//所有主机数据字典

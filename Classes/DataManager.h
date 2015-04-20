@@ -30,6 +30,9 @@ public:
     UpgradeData * GetUpgradeData(int _type);
     void SavaUpgradeData(int _type,bool _isMax = false);
     
+    int GetFight();
+    int GetMaxFight();
+    
 private:
     int mPlayerType;
     int mMainPlaneLevel;

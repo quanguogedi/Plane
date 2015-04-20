@@ -68,20 +68,20 @@ void MenuTopBarLayer::AddDiamondSelector(CCObject *pSender, CCControlEvent pCCCo
 
 void MenuTopBarLayer::RefreshPower()
 {
-    int currPower = GameDataManager::GetInstance()->GetCurrentPower();
-    int maxPower = GameDataManager::GetInstance()->GetMaxPower();
+//    int currPower = GameDataManager::GetInstance()->GetCurrentPower();
+//    int maxPower = GameDataManager::GetInstance()->GetMaxPower();
     
-//    CCString * str = CCString::createWithFormat("%d/%d",currPower,maxPower);
-    CCString * str = CCString::createWithFormat("%d",currPower);
-    mPowerLabel->setString(str->getCString());
+////    CCString * str = CCString::createWithFormat("%d/%d",currPower,maxPower);
+//    CCString * str = CCString::createWithFormat("%d",currPower);
+//    mPowerLabel->setString(str->getCString());
 }
 
 void MenuTopBarLayer::RefreshDiamond()
 {
-    int diamond = GameDataManager::GetInstance()->GetDiamond();
+//    int diamond = GameDataManager::GetInstance()->GetDiamond();
     
-    CCString * str = CCString::createWithFormat("%d",diamond);
-    mDiamondLabel->setString(str->getCString());
+//    CCString * str = CCString::createWithFormat("%d",diamond);
+//    mDiamondLabel->setString(str->getCString());
 }
 
 void MenuTopBarLayer::UpdateTime(float _time)

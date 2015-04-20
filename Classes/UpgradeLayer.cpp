@@ -28,7 +28,9 @@ bool UpgradeLayer::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMem
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "NameLabel", CCLabelTTF*, mNameLabel);
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "DiamondLabel", CCLabelTTF*, mDiamondLabel);
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "DiscLabel", CCLabelTTF*, mDiscLabel);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "BgSprite", CCSprite*, mBgSprite);
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "Sign", CCSprite*, mSign);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "TargetMenu", CCMenu*, mTargetMenu);
     
     return false;
 }
@@ -47,25 +49,60 @@ SEL_MenuHandler UpgradeLayer::onResolveCCBCCMenuItemSelector(CCObject * pTarget,
 
 void UpgradeLayer::RefreshUI()
 {
+    RefreshDisc();
+
+    for (int i = 1; i < 5; i ++)
+    {
+        CCNode * node = mBgSprite->getChildByTag(i);
+
+        UpgradeData * data =DataManager::GetInstance()->GetUpgradeData(i);
+        
+        //更改贴图
+        CCMenuItemImage * item = (CCMenuItemImage*)mTargetMenu->getChildByTag(i);
+        item->setNormalSpriteFrame(CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(data->mSmallFile));
+        
+        for (int j = 1; j < data->mCurrLevel; j++)
+        {
+            CCSprite * sp = (CCSprite*)node->getChildByTag(j);
+            sp->setVisible(true);
+        }
+    }
+}
+
+void UpgradeLayer::RefreshValue()
+{
+    CCNode * node = mBgSprite->getChildByTag(mCurrentTab);
     UpgradeData * data = DataManager::GetInstance()->GetUpgradeData(mCurrentTab);
-    mNameLabel->setString(data->mName);
-    mDiscLabel->setString(data->mDisc);
-    mDiamondLabel->setString(CCString::createWithFormat("%d",data->mUpCost)->getCString());
-    if (data->mIsCanUp)
+
+    for (int i = 1; i < data->mCurrLevel; i++)
     {
-        mValueLabel->setString(CCString::createWithFormat("%d>%d",data->mCurrValue,data->mNextValue)->getCString());
-//        mDiamondLabel->setString(CCString::createWithFormat("%d",data->mUpCost)->getCString());
-    }else
-    {
-        mValueLabel->setString("MAX");
-//        mDiamondLabel->setString(CCString::createWithFormat("%d",data->mUpCost)->getCString());
+        CCSprite * sp = (CCSprite*)node->getChildByTag(i);
+        sp->setVisible(true);
     }
     
-    
-    mDiamondLabel->setString(CCString::createWithFormat("%d",data->mUpCost)->getCString());
-    
-    
     CCNotificationCenter::sharedNotificationCenter()->postNotification(REFRESH_PLANATTRIBUTE,CCString::createWithFormat("%d",mCurrentTab));
+ 
+}
+
+
+
+void UpgradeLayer::RefreshDisc()
+{
+    UpgradeData * data = DataManager::GetInstance()->GetUpgradeData(mCurrentTab);
+    if (data)
+    {
+        mNameLabel->setString(data->mName);
+        mDiscLabel->setString(data->mDisc);
+        mDiamondLabel->setString(CCString::createWithFormat("%d",data->mUpCost)->getCString());
+        if (data->mIsCanUp)
+        {
+            mValueLabel->setString(CCString::createWithFormat("%d>%d",data->mCurrValue,data->mNextValue)->getCString());
+        }else
+        {
+            mValueLabel->setString("MAX");
+        }
+    }
+    
 }
 
 
@@ -74,18 +111,46 @@ void UpgradeLayer::ChooseTargetSelector(CCObject *pSender, CCControlEvent pCCCon
     CCMenuItem* button = (CCMenuItem*)pSender;
     mSign->setPosition(button->getPosition());
     mCurrentTab = button->getTag();
-    RefreshUI();
+    
+    RefreshDisc();
 }
 
 void UpgradeLayer::UpgradeSelector(CCObject *pSender, CCControlEvent pCCControlEvent)
 {
-//    CCLog("Upgrade tab = %d", mCurrentTab);
-//    int currentPlane = GameDataManager::GetSingleton().GetCurrentPlane();
-//    
-//    GameDataManager::GetSingleton().PlaneUpgrade(currentPlane, mCurrentTab);
-    DataManager::GetInstance()->SavaUpgradeData(mCurrentTab);
-    RefreshUI();
+
+    UpgradeData * data = DataManager::GetInstance()->GetUpgradeData(mCurrentTab);
+    
+    if (data->mIsCanUp)
+    {
+        DataManager::GetInstance()->SavaUpgradeData(mCurrentTab);
+        RefreshDisc();
+        RefreshValue();
+        
+    }else
+    {
+        CCLog("已经升至满级");
+    }
 }
+
+void UpgradeLayer::UpgradeMaxSelector(CCObject *pSender, CCControlEvent pCCControlEvent)
+{
+    
+    UpgradeData * data = DataManager::GetInstance()->GetUpgradeData(mCurrentTab);
+    
+    if (data->mIsCanUp)
+    {
+        DataManager::GetInstance()->SavaUpgradeData(mCurrentTab,true);
+        RefreshDisc();
+        RefreshValue();
+        
+    }else
+    {
+        CCLog("已经升至满级");
+    }
+    CCLog("UpgradeMax tab = %d", mCurrentTab);
+    
+}
+
 
 void UpgradeLayer::BackSelector(CCObject *pSender, CCControlEvent pCCControlEvent)
 {
@@ -95,12 +160,7 @@ void UpgradeLayer::BackSelector(CCObject *pSender, CCControlEvent pCCControlEven
     }
 }
 
-void UpgradeLayer::UpgradeMaxSelector(CCObject *pSender, CCControlEvent pCCControlEvent)
-{
-    CCLog("UpgradeMax tab = %d", mCurrentTab);
-    DataManager::GetInstance()->SavaUpgradeData(mCurrentTab,true);
-    RefreshUI();
-}
+
 
 /////////////////////////////////////
 

@@ -278,10 +278,10 @@ PlayerPlaneData* GameDataManager::GetPlayerPlaneData(int planeType)
 
 
 
-UpgradeData::UpgradeData(const char * _bigFile,const char * _smallFile,const char * _name,const char * _disc, int _currValue,int _nextValue,int _maxValue,bool _isCanUp,int _upCost)
+UpgradeData::UpgradeData(const char * _smallFile,const char * _name,const char * _disc, int _currValue,
+                         int _nextValue,int _maxValue,bool _isCanUp,int _upCost,int _currLevel,int _upMaxCost)
 {
  
-    strcpy(mBigFile, _bigFile);
     strcpy(mSmallFile, _smallFile);
     strcpy(mName, _name);
     strcpy(mDisc, _disc);
@@ -291,6 +291,8 @@ UpgradeData::UpgradeData(const char * _bigFile,const char * _smallFile,const cha
     mNextValue = _nextValue;
     mUpCost = _upCost;
     mMaxValue = _maxValue;
+    mCurrLevel = _currLevel;
+    mUpMaxCost = _upMaxCost;
 
 }
 

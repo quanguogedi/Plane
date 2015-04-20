@@ -92,9 +92,9 @@ private:
 class UpgradeData : public CCObject
 {
 public:
-    UpgradeData(const char * _bigFile,const char * _smallFile, const char * _name,const char * _disc, int _currValue,int _nextValue,int _maxValue,bool _isCanUp,int _upCost);
+    UpgradeData(const char * _smallFile, const char * _name,const char * _disc, int _currValue,
+                int _nextValue,int _maxValue,bool _isCanUp,int _upCost,int _currLevel,int _upMaxCost);
     
-    char mBigFile[64];
     char mSmallFile[64];
     char mName[64];
     char mDisc[512];
@@ -103,6 +103,8 @@ public:
     int mNextValue;//下一等级的攻击力
     int mMaxValue;//最大的攻击力
     int mUpCost;//升级所需钻石
+    int mCurrLevel;//当前等级
+    int mUpMaxCost;//升到满级所需钻石
     
 };
 

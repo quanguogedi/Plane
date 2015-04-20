@@ -43,10 +43,6 @@ int DataManager::GetPlayerType()
     return mPlayerType;
 }
 
-
-
-
-
 UpgradeData * DataManager::GetUpgradeData(int _type)
 {
     UpgradeData * data = NULL;
@@ -58,15 +54,19 @@ UpgradeData * DataManager::GetUpgradeData(int _type)
             data = (UpgradeData*)LocalStaticData::GetInstance()->GetMainPlaneDic()->objectForKey(key->getCString());
             break;
         case 2:
+        {
+            CCLog("type = %d Missile = %d playertype = %d",_type,mMissileLevel,mPlayerType);
             key = CCString::createWithFormat("Missile%d%d",mPlayerType,mMissileLevel);
             data = (UpgradeData*)LocalStaticData::GetInstance()->GetMissileDic()->objectForKey(key->getCString());;
             break;
+        }
+            
         case 3:
             key = CCString::createWithFormat("Armor%d%d",mPlayerType,mArmorLevel);
             data = (UpgradeData*)LocalStaticData::GetInstance()->GetArmorDic()->objectForKey(key->getCString());
             break;
         case 4:
-            key = CCString::createWithFormat("Wing%d%d",mPlayerType,mWingPlaneLevel);
+            key = CCString::createWithFormat("WingPlane%d%d",mPlayerType,mWingPlaneLevel);
             data = (UpgradeData*)LocalStaticData::GetInstance()->GetWingPlaneDic()->objectForKey(key->getCString());
             break;
        
@@ -98,6 +98,7 @@ void DataManager::SavaUpgradeData(int _type,bool _isMax)
             {
                 mMissileLevel++;
             };
+            break;
         case 3:
             if (_isMax)
             {
@@ -106,6 +107,7 @@ void DataManager::SavaUpgradeData(int _type,bool _isMax)
             {
                 mArmorLevel++;
             };
+            break;
         case 4:
             if (_isMax)
             {
@@ -114,14 +116,43 @@ void DataManager::SavaUpgradeData(int _type,bool _isMax)
             {
                 mWingPlaneLevel++;
             };
-            
+            break;
         default:
             break;
     }
     
     int value = mMainPlaneLevel*1000 + mMissileLevel*100 + mArmorLevel*10 + mWingPlaneLevel;
+    CCLog("========%d========%d",mPlayerType,value);
     LocalArchiveData::GetInstance()->SavePlayerData(mPlayerType, value);
 }
+
+
+int DataManager::GetFight()
+{
+    UpgradeData * data1 = GetUpgradeData(1);
+    UpgradeData * data2 = GetUpgradeData(2);
+    UpgradeData * data3 = GetUpgradeData(3);
+    UpgradeData * data4 = GetUpgradeData(4);
+    
+    int fight = data1->mCurrValue + data2->mCurrValue + data3->mCurrValue + data4->mCurrValue;
+    
+    return fight;
+}
+
+int DataManager::GetMaxFight()
+{
+    
+    UpgradeData * data1 = GetUpgradeData(1);
+    UpgradeData * data2 = GetUpgradeData(2);
+    UpgradeData * data3 = GetUpgradeData(3);
+    UpgradeData * data4 = GetUpgradeData(4);
+    
+    int maxFight = data1->mMaxValue + data2->mMaxValue + data3->mMaxValue + data4->mMaxValue;
+    
+    return maxFight;
+}
+
+
 
 
 

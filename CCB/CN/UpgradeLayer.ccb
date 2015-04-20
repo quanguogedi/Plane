@@ -423,7 +423,7 @@
 												<key>value</key>
 												<array>
 													<string>res/view6.plist</string>
-													<string>plane_fighter_01.png</string>
+													<string>plane_fighter_02.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -544,7 +544,7 @@
 												<key>value</key>
 												<array>
 													<string>res/view6.plist</string>
-													<string>plane_missile_01.png</string>
+													<string>plane_missile_02.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -665,7 +665,7 @@
 												<key>value</key>
 												<array>
 													<string>res/view6.plist</string>
-													<string>plane_armor_01.png</string>
+													<string>plane_armor_02.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -786,7 +786,7 @@
 												<key>value</key>
 												<array>
 													<string>res/view6.plist</string>
-													<string>plane_wing_01.png</string>
+													<string>plane_wing_02.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -925,6 +925,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>
@@ -1158,9 +1160,9 @@
 								<key>displayName</key>
 								<string>CCMenu</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>TargetMenu</string>
 								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
+								<integer>1</integer>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -1333,6 +1335,14 @@
 										<integer>0</integer>
 										<key>properties</key>
 										<array>
+											<dict>
+												<key>name</key>
+												<string>visible</string>
+												<key>type</key>
+												<string>Check</string>
+												<key>value</key>
+												<false/>
+											</dict>
 											<dict>
 												<key>name</key>
 												<string>position</string>
@@ -1837,6 +1847,14 @@
 										<array>
 											<dict>
 												<key>name</key>
+												<string>visible</string>
+												<key>type</key>
+												<string>Check</string>
+												<key>value</key>
+												<false/>
+											</dict>
+											<dict>
+												<key>name</key>
 												<string>position</string>
 												<key>type</key>
 												<string>Position</string>
@@ -2305,7 +2323,7 @@
 										<key>type</key>
 										<string>Integer</string>
 										<key>value</key>
-										<integer>1</integer>
+										<integer>2</integer>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -2337,6 +2355,14 @@
 										<integer>0</integer>
 										<key>properties</key>
 										<array>
+											<dict>
+												<key>name</key>
+												<string>visible</string>
+												<key>type</key>
+												<string>Check</string>
+												<key>value</key>
+												<false/>
+											</dict>
 											<dict>
 												<key>name</key>
 												<string>position</string>
@@ -2839,6 +2865,14 @@
 										<integer>0</integer>
 										<key>properties</key>
 										<array>
+											<dict>
+												<key>name</key>
+												<string>visible</string>
+												<key>type</key>
+												<string>Check</string>
+												<key>value</key>
+												<false/>
+											</dict>
 											<dict>
 												<key>name</key>
 												<string>position</string>
@@ -3679,7 +3713,7 @@
 								<key>displayName</key>
 								<string>desc</string>
 								<key>memberVarAssignmentName</key>
-								<string>DescLabel</string>
+								<string>DiscLabel</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -3784,8 +3818,6 @@
 										<string>啊锕锕锕锕锕锕锕锕锕锕锕</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>baseClass</key>
@@ -3981,9 +4013,9 @@
 						<key>displayName</key>
 						<string>CCSprite</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>BgSprite</string>
 						<key>memberVarAssignmentType</key>
-						<integer>0</integer>
+						<integer>1</integer>
 						<key>properties</key>
 						<array>
 							<dict>

@@ -103,21 +103,11 @@ void PlanAttributeLayer::RefreshAttribute(cocos2d::CCObject *_obj)
             mAtkLabel3->setString(CCString::createWithFormat("%d",data->mCurrValue)->getCString());
             mAtkSprite3->runAction(CCScaleTo::create(0.3, (float)data->mCurrValue/data->mMaxValue,1));;
             break;
-            
         default:
             break;
     }
     
-    
-    UpgradeData * data1 = DataManager::GetInstance()->GetUpgradeData(1);
-    UpgradeData * data2 = DataManager::GetInstance()->GetUpgradeData(2);
-    UpgradeData * data3 = DataManager::GetInstance()->GetUpgradeData(3);
-    UpgradeData * data4 = DataManager::GetInstance()->GetUpgradeData(4);
-    
-    int fight = data1->mCurrValue + data2->mCurrValue + data3->mCurrValue + data4->mCurrValue;
-    int maxFight = data1->mMaxValue + data2->mMaxValue + data3->mMaxValue + data4->mMaxValue;
-    
-    mAtkLabel4->setString(CCString::createWithFormat("%d",fight)->getCString());
-    mAtkSprite4->runAction(CCScaleTo::create(0.3, (float)fight/maxFight,1));
+    mAtkLabel4->setString(CCString::createWithFormat("%d",DataManager::GetInstance()->GetFight())->getCString());
+    mAtkSprite4->runAction(CCScaleTo::create(0.3, (float)DataManager::GetInstance()->GetFight()/DataManager::GetInstance()->GetMaxFight(),1));
 }
 

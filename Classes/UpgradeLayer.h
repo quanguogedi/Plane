@@ -26,6 +26,10 @@ public:
     
     virtual void RefreshUI();
     
+    void RefreshValue();
+    void RefreshDisc();
+    
+    
     void UpgradeSelector(CCObject *pSender, CCControlEvent pCCControlEvent);
     void UpgradeMaxSelector(CCObject *pSender, CCControlEvent pCCControlEvent);
     void BackSelector(CCObject *pSender, CCControlEvent pCCControlEvent);
@@ -37,7 +41,9 @@ private:
     CCLabelTTF* mNameLabel;
     CCLabelTTF* mDiamondLabel;
     CCLabelTTF* mDiscLabel;
+    CCSprite * mBgSprite;
     CCSprite * mSign;
+    CCMenu * mTargetMenu;
     int mCurrentTab;
 };
 

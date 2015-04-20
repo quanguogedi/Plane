@@ -19,17 +19,18 @@ LocalArchiveData::LocalArchiveData()
 
 void LocalArchiveData::LoadArchiveData()
 {
-    CocosSaveManager::GetInstance()->setIntegerForKey("PlayerData1", 1111);
     
-    mIsScoundEnable = CocosSaveManager::GetInstance()->getBoolForKey("SoundState",true);
-    mIsMusicEnable = CocosSaveManager::GetInstance()->getBoolForKey("MusicState",true);
+    
+    mIsScoundEnable = CocosSaveManager::GetInstance()->getIntegerForKey("SoundState",true);
+    mIsMusicEnable = CocosSaveManager::GetInstance()->getIntegerForKey("MusicState",true);
+    
 
 }
 
 void LocalArchiveData::SaveArchiveData()
 {
-    CocosSaveManager::GetInstance()->setBoolForKey("SoundState", mIsScoundEnable);
-    CocosSaveManager::GetInstance()->setBoolForKey("MusicState", mIsMusicEnable);
+    CocosSaveManager::GetInstance()->setIntegerForKey("SoundState", mIsScoundEnable);
+    CocosSaveManager::GetInstance()->setIntegerForKey("MusicState", mIsMusicEnable);
 
 }
 
@@ -42,8 +43,17 @@ void LocalArchiveData::SavePlayerData(int _type, int _value)
 int LocalArchiveData::GetPlayerDataByType(int _type)
 {
     CCString * key = CCString::createWithFormat("PlayerData%d",_type);
+   
+    int player = 0;
     
-    int player = CocosSaveManager::GetInstance()->getIntegerForKey(key->getCString(), 0);
+    if (_type == 1)
+    {
+        player = CocosSaveManager::GetInstance()->getIntegerForKey(key->getCString(), 1111);
+    }else
+    {
+        player = CocosSaveManager::GetInstance()->getIntegerForKey(key->getCString(), 0);
+    }
+    
     
     return player;
 }

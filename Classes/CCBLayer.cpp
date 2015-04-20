@@ -30,7 +30,7 @@ void CCBLayer::onEnter()
     
     
     
-    RefreshUI();
+//    RefreshUI();
     
     
     
