@@ -33,7 +33,7 @@ bool CGameMenu::init()
 		CC_BREAK_IF(! CBaseScene::init());
         InitBackGround();
         InitBottomLayer();
-        InitDisPlayLayer();
+//        InitDisPlayLayer();
         
 		bRet = true;
 	}
@@ -89,11 +89,13 @@ void CGameMenu::OpenUpgradeLayer()
         CCArray * loaderArr = CCArray::create();
         
         ccbNameArr->addObject(CCString::create("UpgradeLayer"));
+        ccbNameArr->addObject(CCString::create("PlaneDisplayLayer"));
         ccbNameArr->addObject(CCString::create("PlanAttributeLayer"));
         ccbNameArr->addObject(CCString::create("MenuTopBarLayer"));
 
         
         loaderArr->addObject(UpgradeLayerLoader::loader());
+        loaderArr->addObject(PlaneDisplayLayerLoader::loader());
         loaderArr->addObject(PlanAttributeLayerLoader::loader());
         loaderArr->addObject(MenuTopBarLayerLoader::loader());
         
@@ -160,10 +162,12 @@ void CGameMenu::InitBottomLayer()
     CCArray * loaderArr = CCArray::create();
     
     ccbNameArr->addObject(CCString::create("MenuBottomLayer"));
+    ccbNameArr->addObject(CCString::create("PlaneDisplayLayer"));
     ccbNameArr->addObject(CCString::create("PlanAttributeLayer"));
     ccbNameArr->addObject(CCString::create("MenuTopBarLayer"));
     
     loaderArr->addObject(MenuBottomLayerLoader::loader());
+    loaderArr->addObject(PlaneDisplayLayerLoader::loader());
     loaderArr->addObject(PlanAttributeLayerLoader::loader());
     loaderArr->addObject(MenuTopBarLayerLoader::loader());
     

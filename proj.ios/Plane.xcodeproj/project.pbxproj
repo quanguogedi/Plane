@@ -275,6 +275,7 @@
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		C0DAA6941AE7BEB900A67442 /* LevelContainerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0DAA6921AE7BEB900A67442 /* LevelContainerLayer.cpp */; };
 		C0EEDF541AE01102007C5069 /* LocalArchiveData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0EEDF521AE01102007C5069 /* LocalArchiveData.cpp */; };
 		C0EEDF551AE01102007C5069 /* LocalStaticData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0EEDF531AE01102007C5069 /* LocalStaticData.cpp */; };
 		C0EEDF591AE014B5007C5069 /* CocosSaveManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0EEDF581AE014B5007C5069 /* CocosSaveManager.cpp */; };
@@ -857,6 +858,8 @@
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C0DAA6921AE7BEB900A67442 /* LevelContainerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LevelContainerLayer.cpp; path = ../Classes/LevelContainerLayer.cpp; sourceTree = "<group>"; };
+		C0DAA6931AE7BEB900A67442 /* LevelContainerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelContainerLayer.h; path = ../Classes/LevelContainerLayer.h; sourceTree = "<group>"; };
 		C0EEDF501AE01102007C5069 /* LocalArchiveData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalArchiveData.h; sourceTree = "<group>"; };
 		C0EEDF511AE01102007C5069 /* LocalStaticData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalStaticData.h; sourceTree = "<group>"; };
 		C0EEDF521AE01102007C5069 /* LocalArchiveData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocalArchiveData.cpp; sourceTree = "<group>"; };
@@ -2054,6 +2057,8 @@
 				B2EE8DE51AD98403009B5123 /* PlaneDisplayLayer.h */,
 				B2368D221ADA95C2007DBE7E /* LevelBottomLayer.cpp */,
 				B2368D231ADA95C2007DBE7E /* LevelBottomLayer.h */,
+				C0DAA6921AE7BEB900A67442 /* LevelContainerLayer.cpp */,
+				C0DAA6931AE7BEB900A67442 /* LevelContainerLayer.h */,
 			);
 			name = CCB;
 			sourceTree = "<group>";
@@ -2186,6 +2191,7 @@
 				15A3D9131682F7D5002FB0C5 /* b2Fixture.cpp in Sources */,
 				15A3D9141682F7D5002FB0C5 /* b2Island.cpp in Sources */,
 				15A3D9151682F7D5002FB0C5 /* b2World.cpp in Sources */,
+				C0DAA6941AE7BEB900A67442 /* LevelContainerLayer.cpp in Sources */,
 				15A3D9161682F7D5002FB0C5 /* b2WorldCallbacks.cpp in Sources */,
 				B2E7CE0E1AD7AB4000A0407E /* CCBLayer.cpp in Sources */,
 				15A3D9171682F7D5002FB0C5 /* b2ChainAndCircleContact.cpp in Sources */,

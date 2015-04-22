@@ -19,6 +19,11 @@ void MenuTopBarLayer::onEnter()
 
 void MenuTopBarLayer::onExit()
 {
+    CC_SAFE_RELEASE(mTimeLabel);
+    CC_SAFE_RELEASE(mPowerLabel);
+    CC_SAFE_RELEASE(mDiamondLabel);
+    
+    
     CCBLayer::onExit();
     CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, REFRESH_POWER);
     CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, REFRESH_DIAMOND);

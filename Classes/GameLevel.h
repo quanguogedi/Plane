@@ -8,6 +8,7 @@
 #include "BuyPowerLayer.h"
 #include "UpgradeLayer.h"
 #include "PlanAttributeLayer.h"
+#include "PlaneDisplayLayer.h"
 
 
 class CGameLevel : public CBaseScene

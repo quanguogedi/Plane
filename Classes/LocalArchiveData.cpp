@@ -80,5 +80,18 @@ int LocalArchiveData::LoadAllStart()
     return num;
 }
 
+int LocalArchiveData::LoadUnlockLevelCount()
+{
+    int num = CocosSaveManager::GetInstance()->getIntegerForKey("UnLockLevelCount", 1);
+    return  num;
+}
+void LocalArchiveData::SaveUnLockLevelCount(int _count)
+{
+    if (_count > LoadUnlockLevelCount())
+    {
+        CocosSaveManager::GetInstance()->setIntegerForKey("UnLockLevelCount", _count);
+    }
+    
+}
 
 

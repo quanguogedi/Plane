@@ -1,14 +1,13 @@
 //
-//  LevelListLayer.cpp
+//  LevelContainerLayer.cpp
 //  Plane
 //
-//  Created by KGB on 15/3/20.
+//  Created by 杨延飞 on 15/4/22.
 //
 //
 
-#include "LevelListLayer.h"
-
-bool LevelListLayer::init()
+#include "LevelContainerLayer.h"
+bool LevelContainerLayer::init()
 {
     if (!CCBLayer::init())
     {
@@ -18,20 +17,20 @@ bool LevelListLayer::init()
     return true;
 }
 
-bool LevelListLayer::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode)
+bool LevelContainerLayer::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode)
 {
-//    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "Menu", CCMenu*, mMenu);
+    //    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "Menu", CCMenu*, mMenu);
     return false;
 }
 
-SEL_MenuHandler LevelListLayer::onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName)
+SEL_MenuHandler LevelContainerLayer::onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName)
 {
-    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "LevelSelector", LevelListLayer::LevelSlector);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "LevelSelector", LevelContainerLayer::LevelSlector);
     
     return false;
 }
 
-void LevelListLayer::RefreshUI()
+void LevelContainerLayer::RefreshUI()
 {
     int unLockLevelCount = 5;//LocalArchiveData::GetInstance()->LoadUnlockLevelCount();
     for (int i = 1; i <= getChildrenCount(); i++)
@@ -61,18 +60,18 @@ void LevelListLayer::RefreshUI()
     }
 }
 
-void LevelListLayer::LevelSlector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
+void LevelContainerLayer::LevelSlector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
 {
     CCLog("LevelSlector ==== %d",((CCMenuItem*)pSender)->getTag());
 }
 
 
-void LevelListLayer::AddSubCell(CCNode* cell)
+void LevelContainerLayer::AddSubCell(CCNode* cell)
 {
-    mContainerNode->addChild(cell);
+//    mContainerNode->addChild(cell);
 }
 
-void LevelListLayer::SetScrollHeight(float h)
+void LevelContainerLayer::SetScrollHeight(float h)
 {
-    mLevelListScrollView->setContentSize(CCSizeMake(SCREEN_W, h));
+//    mLevelListScrollView->setContentSize(CCSizeMake(SCREEN_W, h));
 }

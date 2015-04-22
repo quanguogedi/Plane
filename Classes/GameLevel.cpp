@@ -38,17 +38,7 @@ bool CGameLevel::init()
         
         
         
-        CCNode * container = CCBManager::LoadCCBByNameAndLoader("LevelListLayer", LevelListLayerLoader::loader());
         
-        CCScrollView * scrollView = CCScrollView::create(size, container);
-        scrollView->setTouchEnabled(true);
-        scrollView->setTouchPriority(-130);
-        //    scrollView->setDelegate(this);
-        scrollView->setDirection(kCCScrollViewDirectionVertical);
-        scrollView->setPosition(ccp(0, 50));
-        scrollView->setContentOffset(CCPointZero);
-        
-        this->addChild(scrollView);
         
         
         
@@ -232,11 +222,13 @@ void CGameLevel::OpenUpgradeLayer()
         CCArray * loaderArr = CCArray::create();
         
         ccbNameArr->addObject(CCString::create("UpgradeLayer"));
+        ccbNameArr->addObject(CCString::create("PlaneDisplayLayer"));
         ccbNameArr->addObject(CCString::create("PlanAttributeLayer"));
         ccbNameArr->addObject(CCString::create("MenuTopBarLayer"));
         
         
         loaderArr->addObject(UpgradeLayerLoader::loader());
+        loaderArr->addObject(PlaneDisplayLayerLoader::loader());
         loaderArr->addObject(PlanAttributeLayerLoader::loader());
         loaderArr->addObject(MenuTopBarLayerLoader::loader());
         

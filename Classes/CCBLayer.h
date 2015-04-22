@@ -39,7 +39,7 @@ public:
     virtual void Hide();
     
     
-    void SetDelegate(CCBDelegate * _delegate);
+    virtual void SetDelegate(CCBDelegate * _delegate);
     CCBDelegate * GetDelegate();
     
     bool GetIsTheLast();

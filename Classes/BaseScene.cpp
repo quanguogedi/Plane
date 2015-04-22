@@ -47,6 +47,7 @@ void CBaseScene::onEnter()
 
 void CBaseScene::onExit()
 {
+    CCLayer::onExit();
     unscheduleUpdate();
 }
 

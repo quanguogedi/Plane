@@ -20,7 +20,7 @@ public:
     LocalArchiveData();
     bool mIsScoundEnable;//是否能播放音效
     bool mIsMusicEnable;//是否能播放背景音乐
-    int mFinishLevel;//闯关数
+    int mUnLockLevel;//闯关数
     
    
     
@@ -33,6 +33,9 @@ public:
     void SaveLevelStar(int _level,int _star);
     int LoadLevelStar(int _level);
     int LoadAllStart();
+    
+    int LoadUnlockLevelCount();
+    void SaveUnLockLevelCount(int _count);
 
 
 };
