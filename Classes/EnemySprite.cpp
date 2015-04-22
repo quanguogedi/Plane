@@ -68,7 +68,7 @@ void CEnemySprite::setAttr()
 		m_fShootSpace = 4.0f;
 		m_iBulletType = 1;
 		m_iScore = 1;
-		switch(g_iGameLevel)
+		switch(DataManager::GetInstance()->GetGameLevel())
 		{
 		case LEVEL_ONE:
 			m_iBulletNum = 3;
@@ -94,7 +94,7 @@ void CEnemySprite::setAttr()
 		m_fShootSpace = 2.0f;
 		m_iBulletType = 1;
 		m_iScore = 1;
-		switch(g_iGameLevel)
+		switch(DataManager::GetInstance()->GetGameLevel())
 		{
 		case LEVEL_ONE:
 			m_iBulletNum = 1;
@@ -120,7 +120,7 @@ void CEnemySprite::setAttr()
 		m_fShootSpace = 2.0f;
 		m_iBulletType = 1;
 		m_iScore = 1;
-		switch(g_iGameLevel)
+		switch(DataManager::GetInstance()->GetGameLevel())
 		{
 		case LEVEL_ONE:
 			m_iBulletNum = 2;

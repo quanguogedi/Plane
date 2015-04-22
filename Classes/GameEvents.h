@@ -11,7 +11,7 @@ enum{
     GAME_CLEAR,     // 游戏过关
 	GAME_OVER,      // 游戏结束
 };
-extern int g_iGameLevel;		// 游戏关卡
+//extern int g_iGameLevel;		// 游戏关卡
 
 class CGameEvents : public CBaseScene
 {

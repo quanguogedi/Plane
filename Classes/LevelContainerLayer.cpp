@@ -25,7 +25,7 @@ bool LevelContainerLayer::onAssignCCBMemberVariable(CCObject* pTarget, const cha
 
 SEL_MenuHandler LevelContainerLayer::onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName)
 {
-    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "LevelSelector", LevelContainerLayer::LevelSlector);
+//    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "LevelSelector", LevelContainerLayer::LevelSlector);
     
     return false;
 }
@@ -60,18 +60,4 @@ void LevelContainerLayer::RefreshUI()
     }
 }
 
-void LevelContainerLayer::LevelSlector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
-{
-    CCLog("LevelSlector ==== %d",((CCMenuItem*)pSender)->getTag());
-}
 
-
-void LevelContainerLayer::AddSubCell(CCNode* cell)
-{
-//    mContainerNode->addChild(cell);
-}
-
-void LevelContainerLayer::SetScrollHeight(float h)
-{
-//    mLevelListScrollView->setContentSize(CCSizeMake(SCREEN_W, h));
-}

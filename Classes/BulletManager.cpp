@@ -10,7 +10,7 @@ bool CBulletManager::init()
 		CCSize size = CCDirector::sharedDirector()->getWinSize();
 		m_iBulletCout = 0;
 //		m_pBulletList = CCSpriteBatchNode::create("Image/Bullet.png");
-        m_pBulletList = CCSpriteBatchNode::create("res/Resources/002_ef_001.png");
+        m_pBulletList = CCSpriteBatchNode::create("res/002_ef_001.png");
 //        m_pBulletList->setScale(2.0f);
 		this->addChild(m_pBulletList);
         

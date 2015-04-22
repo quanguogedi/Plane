@@ -45,12 +45,12 @@ bool CLoadLogo::init()
 
 void CLoadLogo::makeTransition(float dt)
 {
-//    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Image/Shield.plist");//old
-//    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Image/Missile.plist");//old
-//    
-//    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("res/Resources/002_ef_001.plist");
-//    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("res/Resources/003_enemy_a.plist");
-//    
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Image/Shield.plist");//old
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Image/Missile.plist");//old
+//
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("res/002_ef_001.plist");
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("res/003_enemy_a.plist");
+//
 //	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Music/Title.mp3", true);
 	CGameEvents::startFlipInterface(GAME_MENU);
 }

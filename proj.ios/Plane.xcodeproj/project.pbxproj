@@ -253,6 +253,11 @@
 		B27C84881ADD6575003328F6 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = B27C84851ADD6575003328F6 /* fileLookup.plist */; };
 		B27C84891ADD6575003328F6 /* font in Resources */ = {isa = PBXBuildFile; fileRef = B27C84861ADD6575003328F6 /* font */; };
 		B294D92F1AE3976C001E3743 /* DataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B294D92D1AE3976C001E3743 /* DataManager.cpp */; };
+		B2D763EA1AE7D8A300EB7477 /* StartGameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2D763E81AE7D8A300EB7477 /* StartGameLayer.cpp */; };
+		B2D763EE1AE7DC5C00EB7477 /* Image in Resources */ = {isa = PBXBuildFile; fileRef = B2D763EB1AE7DC5C00EB7477 /* Image */; };
+		B2D763EF1AE7DC5C00EB7477 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = B2D763EC1AE7DC5C00EB7477 /* Music */; };
+		B2D763F01AE7DC5C00EB7477 /* new in Resources */ = {isa = PBXBuildFile; fileRef = B2D763ED1AE7DC5C00EB7477 /* new */; };
+		B2D763F31AE7E5EB00EB7477 /* GameMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2D763F11AE7E5EB00EB7477 /* GameMenuLayer.cpp */; };
 		B2E7CDFE1AD7A2BB00A0407E /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CDFC1AD7A2BB00A0407E /* BaseScene.cpp */; };
 		B2E7CE061AD7AB1D00A0407E /* AchievementCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE021AD7AB1D00A0407E /* AchievementCell.cpp */; };
 		B2E7CE071AD7AB1D00A0407E /* AchievementLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE041AD7AB1D00A0407E /* AchievementLayer.cpp */; };
@@ -817,6 +822,13 @@
 		B27C84861ADD6575003328F6 /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
 		B294D92D1AE3976C001E3743 /* DataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataManager.cpp; path = ../Classes/DataManager.cpp; sourceTree = "<group>"; };
 		B294D92E1AE3976C001E3743 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = ../Classes/DataManager.h; sourceTree = "<group>"; };
+		B2D763E81AE7D8A300EB7477 /* StartGameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StartGameLayer.cpp; path = ../Classes/StartGameLayer.cpp; sourceTree = "<group>"; };
+		B2D763E91AE7D8A300EB7477 /* StartGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartGameLayer.h; path = ../Classes/StartGameLayer.h; sourceTree = "<group>"; };
+		B2D763EB1AE7DC5C00EB7477 /* Image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Image; sourceTree = "<group>"; };
+		B2D763EC1AE7DC5C00EB7477 /* Music */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Music; sourceTree = "<group>"; };
+		B2D763ED1AE7DC5C00EB7477 /* new */ = {isa = PBXFileReference; lastKnownFileType = folder; path = new; sourceTree = "<group>"; };
+		B2D763F11AE7E5EB00EB7477 /* GameMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameMenuLayer.cpp; path = ../Classes/GameMenuLayer.cpp; sourceTree = "<group>"; };
+		B2D763F21AE7E5EB00EB7477 /* GameMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameMenuLayer.h; path = ../Classes/GameMenuLayer.h; sourceTree = "<group>"; };
 		B2E7CDFC1AD7A2BB00A0407E /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseScene.cpp; path = ../Classes/BaseScene.cpp; sourceTree = "<group>"; };
 		B2E7CDFD1AD7A2BB00A0407E /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseScene.h; path = ../Classes/BaseScene.h; sourceTree = "<group>"; };
 		B2E7CE021AD7AB1D00A0407E /* AchievementCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AchievementCell.cpp; path = ../Classes/AchievementCell.cpp; sourceTree = "<group>"; };
@@ -1901,6 +1913,9 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B2D763EB1AE7DC5C00EB7477 /* Image */,
+				B2D763EC1AE7DC5C00EB7477 /* Music */,
+				B2D763ED1AE7DC5C00EB7477 /* new */,
 				B27C84841ADD6575003328F6 /* CN */,
 				B27C84851ADD6575003328F6 /* fileLookup.plist */,
 				B27C84861ADD6575003328F6 /* font */,
@@ -2059,6 +2074,10 @@
 				B2368D231ADA95C2007DBE7E /* LevelBottomLayer.h */,
 				C0DAA6921AE7BEB900A67442 /* LevelContainerLayer.cpp */,
 				C0DAA6931AE7BEB900A67442 /* LevelContainerLayer.h */,
+				B2D763E81AE7D8A300EB7477 /* StartGameLayer.cpp */,
+				B2D763E91AE7D8A300EB7477 /* StartGameLayer.h */,
+				B2D763F11AE7E5EB00EB7477 /* GameMenuLayer.cpp */,
+				B2D763F21AE7E5EB00EB7477 /* GameMenuLayer.h */,
 			);
 			name = CCB;
 			sourceTree = "<group>";
@@ -2137,6 +2156,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D763F01AE7DC5C00EB7477 /* new in Resources */,
+				B2D763EF1AE7DC5C00EB7477 /* Music in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				B20E59E61A20430700D99106 /* res in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
@@ -2147,6 +2168,7 @@
 				B27C84871ADD6575003328F6 /* CN in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
+				B2D763EE1AE7DC5C00EB7477 /* Image in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 			);
@@ -2337,6 +2359,7 @@
 				1A8F3B6F175E05DA00049216 /* AnimationState.cpp in Sources */,
 				1A8F3B70175E05DA00049216 /* AnimationStateData.cpp in Sources */,
 				1A8F3B71175E05DA00049216 /* Atlas.cpp in Sources */,
+				B2D763F31AE7E5EB00EB7477 /* GameMenuLayer.cpp in Sources */,
 				1A8F3B72175E05DA00049216 /* AtlasAttachmentLoader.cpp in Sources */,
 				1A8F3B73175E05DA00049216 /* Attachment.cpp in Sources */,
 				B2EE8DE61AD98403009B5123 /* PlaneDisplayLayer.cpp in Sources */,
@@ -2386,6 +2409,7 @@
 				379BB9AC17F03F3700829B88 /* CCUtilMath.cpp in Sources */,
 				379BB9AD17F03F3700829B88 /* CCComAttribute.cpp in Sources */,
 				B26DF37A19FCF77100752273 /* BulletManager.cpp in Sources */,
+				B2D763EA1AE7D8A300EB7477 /* StartGameLayer.cpp in Sources */,
 				379BB9AE17F03F3700829B88 /* CCComAudio.cpp in Sources */,
 				379BB9AF17F03F3700829B88 /* CCComController.cpp in Sources */,
 				379BB9B017F03F3700829B88 /* CCComRender.cpp in Sources */,

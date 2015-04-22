@@ -22,6 +22,11 @@ DataManager::~DataManager()
 
 void DataManager::Init()
 {
+    mMainPlaneLevel = 0;
+    mMissileLevel = 0;
+    mArmorLevel = 0;
+    mWingPlaneLevel = 0;
+    mGameLevel = 0;
     SetPlayerType(1);
 }
 
@@ -150,6 +155,16 @@ int DataManager::GetMaxFight()
     int maxFight = data1->mMaxValue + data2->mMaxValue + data3->mMaxValue + data4->mMaxValue;
     
     return maxFight;
+}
+
+void DataManager::SetGameLevel(int _level)
+{
+    mGameLevel = _level;
+}
+
+int DataManager::GetGameLevel()
+{
+    return mGameLevel;
 }
 
 

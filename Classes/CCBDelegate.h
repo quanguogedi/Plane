@@ -48,6 +48,10 @@ public:
     virtual void OpenSettingLayer(){};
     
 
+    //LevelBottomLayer调用
+    virtual void OpenStartGameLayer(){};
+    
+    
 };
 
 #endif

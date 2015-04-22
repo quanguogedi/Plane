@@ -3,7 +3,7 @@
 
 using namespace cocos2d;
 
-extern int g_iGameLevel;		// 游戏关卡
+//extern int g_iGameLevel;		// 游戏关卡
 
 class CGameMap : public CCLayer
 {

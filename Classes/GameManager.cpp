@@ -1,7 +1,6 @@
 #include "GameManager.h"
 #include "Effect.h"
-#include "CCBManager.h"
-#include "ThirdLayer.h"
+#include "GameMenuLayer.h"
 
 CPlayerSprite* CGameManager::m_pPlayer = NULL;
 CBulletManager* CGameManager::m_pBulletManager = NULL;
@@ -49,9 +48,9 @@ bool CGameManager::init()
 	do{
 		CC_BREAK_IF(! CBaseScene::init());
 
-		char szPath[32];
-		sprintf(szPath,"Music/Stage%d.mp3", g_iGameLevel);
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic(szPath, true);
+//		char szPath[32];
+//		sprintf(szPath,"Music/Stage%d.mp3", g_iGameLevel);
+//		CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic(szPath, true);
 
 		CCSize size = CCDirector::sharedDirector()->getWinSize();
 		/**	随机种子	*/
@@ -95,15 +94,19 @@ bool CGameManager::init()
 		pBack->setSelectedSpriteFrame(CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("Back.png"));
 		pBack->setPosition(ccp(size.width - 39, 21));
 
-		/**	添加菜单	*/
-		CCMenu *pMenu = CCMenu::create(pBack, NULL);
-		pMenu->setPosition(ccp(0, 0));
+        //添加GameMenuLayer
+        CCNode * menu = CCBManager::LoadCCBByNameAndLoader("GameMenuLayer", GameMenuLayerLoader::loader());
+        this->addChild(menu,99);
+//		/**	添加菜单	*/
+//		CCMenu *pMenu = CCMenu::create(pBack, NULL);
+//		pMenu->setPosition(ccp(0, 0));
 //		this->addChild(pMenu, 6, 6);
         
-        ThirdLayer * thirdLayer = (ThirdLayer*)CCBManager::LoadCCBByNameAndLoader("ThirdLayer", ThirdLayerLoader::loader());
-        this->addChild(thirdLayer,100);
+//        ThirdLayer * thirdLayer = (ThirdLayer*)CCBManager::LoadCCBByNameAndLoader("ThirdLayer", ThirdLayerLoader::loader());
+//        this->addChild(thirdLayer,100);
         
-		this->scheduleUpdate();
+//		this->scheduleUpdate();
+        this->schedule(schedule_selector(CGameManager::update));
 
 		bRet = true;
 	}
@@ -118,13 +121,13 @@ void CGameManager::update(float dt)
 		m_pPlayer->setWin(false);
 		m_pPlayer->initAttrWithWin();
 		m_pPlayer->setTouchEnabled(true);
-		g_iGameLevel ++ ;
-		if(g_iGameLevel >= 4)
-			g_iGameLevel = 1;
+		DataManager::GetInstance()->SetGameLevel(DataManager::GetInstance()->GetGameLevel()+1)  ;
+		if(DataManager::GetInstance()->GetGameLevel() >= 4)
+			DataManager::GetInstance()->SetGameLevel(1);
 
-		char szPath[32];
-		sprintf(szPath,"Music/Stage%d.mp3", g_iGameLevel);
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic(szPath, true);
+//		char szPath[32];
+//		sprintf(szPath,"Music/Stage%d.mp3", g_iGameLevel);
+//		CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic(szPath, true);
 
 		this->removeChildByTag(0, true);
 		m_pGameMap = (CGameMap*)CGameMap::create();

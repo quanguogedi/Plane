@@ -21,21 +21,6 @@ public:
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName);
     virtual void RefreshUI();
     
-    void LevelSlector(CCObject *pSender, CCControlEvent pCCControlEvent);
-    
-    
-private:
-    //    virtual void scrollViewDidScroll(cocos2d::extension::CCScrollView *view);
-    //    virtual void scrollViewDidZoom(cocos2d::extension::CCScrollView *view);
-    
-public:
-    void AddSubCell(CCNode* cell);
-    void SetScrollHeight(float h);
-    
-private:
-    CCScrollView* mLevelListScrollView;
-    CCNode* mContainerNode;
-    
 };
 
 

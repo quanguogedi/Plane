@@ -3,7 +3,7 @@
 #include "GameManager.h"
 #include "GameOver.h"
 
-int g_iGameLevel = LEVEL_ONE;
+//int g_iGameLevel = LEVEL_ONE;
 
 void CGameEvents::startFlipInterface(int iType)
 {

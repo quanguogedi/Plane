@@ -96,6 +96,11 @@ void LevelBottomLayer::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *
             
             if (sp->boundingBox().containsPoint(mContainer->convertToNodeSpace(endPos)))
             {
+                DataManager::GetInstance()->SetGameLevel(sp->getTag());
+                if (mDelegate)
+                {
+                    mDelegate->OpenStartGameLayer();
+                }
                 CCLog("tousadfasfdasf ======== %d",sp->getTag());
                 break;
             }

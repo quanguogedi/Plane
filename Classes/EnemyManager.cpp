@@ -11,7 +11,7 @@ bool CEnemyManager::init()
 		CCSize size = CCDirector::sharedDirector()->getWinSize();
 		m_iEnemyCout = 0;
 //		m_pEnemyList = CCSpriteBatchNode::create("Image/Plane.png");
-        m_pEnemyList = CCSpriteBatchNode::create("res/Resources/003_enemy_a.png");
+        m_pEnemyList = CCSpriteBatchNode::create("res/003_enemy_a.png");
 //        m_pEnemyList = CCSpriteBatchNode::create("new/plane_02.png");
 		this->addChild(m_pEnemyList);
 //		CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Image/Plane.plist");
@@ -61,7 +61,7 @@ void CEnemyManager::createNewEnemys(float dt)
 
 void CEnemyManager::createBoss(float dt)
 {
-	int iBossType = g_iGameLevel - 1;
+    int iBossType = DataManager::GetInstance()->GetGameLevel() - 1;
 	CBossSprite *pBoss = CBossSprite::create(iBossType);
 	this->addChild(pBoss, 1, 100);
 	this->unschedule(schedule_selector(CEnemyManager::createNewEnemys));

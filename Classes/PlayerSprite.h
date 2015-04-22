@@ -2,7 +2,7 @@
 
 #include "RoleSprite.h"
 
-extern int g_iGameLevel;
+//extern int g_iGameLevel;
 
 class CPlayerSprite : public CRoleSprite
 {
