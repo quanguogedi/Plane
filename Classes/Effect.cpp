@@ -4,7 +4,7 @@ using namespace std;
 
 void CEffect::sharedExplosion()
 {
-	CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Image/explosion.plist");
+	CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("res/Image/explosion.plist");
 	CCArray *animFrames = CCArray::create();
 	char str[64] = {0};
 	for (int i = 1; i < 35; i++) {
@@ -19,7 +19,7 @@ void CEffect::sharedExplosion()
 
 void CEffect::sharedGold()
 {
-	CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Image/Item.plist");
+	CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("res/Image/Item.plist");
 	CCArray *animFrames = CCArray::create();
 	char str[64] = {0};
 	for (int i = 1; i < 8; i++) {

@@ -16,6 +16,22 @@ bool GameMenuLayer::init()
     
     return true;
 }
+void GameMenuLayer::onEnter()
+{
+    CCBLayer::onEnter();
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(GameMenuLayer::RefreshProps), REFRESH_PROPS, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(GameMenuLayer::RefreshScore), REFRESH_SCORE, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(GameMenuLayer::RefreshHp), REFRESH_HP, NULL);
+}
+
+void GameMenuLayer::onExit()
+{
+    CCBLayer::onExit();
+    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, REFRESH_PROPS);
+    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, REFRESH_SCORE);
+    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, REFRESH_HP);
+}
+
 
 bool GameMenuLayer::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode)
 {
@@ -37,17 +53,38 @@ SEL_MenuHandler GameMenuLayer::onResolveCCBCCMenuItemSelector(CCObject * pTarget
 
 void GameMenuLayer::RefreshUI()
 {
-    RefreshPropLabel();
+    RefreshProps();
+    RefreshScore()
     
 }
-void GameMenuLayer::RefreshPropLabel()
+void GameMenuLayer::RefreshProps()
 {
+    int killerCount = LocalArchiveData::GetInstance()->mKillerCount;
+    int shieldCount = LocalArchiveData::GetInstance()->mShieldCount;
     
+    mKillerLabel->setString(CCString::createWithFormat("%d",killerCount)->getCString());
+    mShieldLabel->setString(CCString::createWithFormat("%d",shieldCount)->getCString());
+}
+
+void GameMenuLayer::RefreshScore()
+{
+    int score = DataManager::GetInstance()->GetScore();
+    mScoreLabel->setString(CCString::createWithFormat("%d",score)->getCString());
+}
+
+void GameMenuLayer::RefreshHp()
+{
+    float hp = DataManager::GetInstance()->GetHpPCT();
+    mHpSprite->setScaleX(hp);
 }
 
 void GameMenuLayer::PauseSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
 {
 //    CGameEvents::startFlipInterface(GAME_START);
+    if (mDelegate)
+    {
+        mDelegate->OpenPauseLayer();
+    }
 }
 
 void GameMenuLayer::KillerSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)

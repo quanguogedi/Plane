@@ -36,9 +36,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     LocalArchiveData::Initialize();
     LevelManager::Initialize();
     PrototypeDataManager::Initialize();
-    
+    DataManager::Initialize(); 
 //    GameDataManager::Initialize();
-    DataManager::Initialize();
+    
 	// create a scene. it's an autorelease object
 	CCScene *pScene = CLoadLogo::scene();
 

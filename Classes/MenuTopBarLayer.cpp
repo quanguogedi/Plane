@@ -83,10 +83,10 @@ void MenuTopBarLayer::RefreshPower()
 
 void MenuTopBarLayer::RefreshDiamond()
 {
-//    int diamond = GameDataManager::GetInstance()->GetDiamond();
+    int diamond = LocalArchiveData::GetInstance()->mDiamondCount;
     
-//    CCString * str = CCString::createWithFormat("%d",diamond);
-//    mDiamondLabel->setString(str->getCString());
+    CCString * str = CCString::createWithFormat("%d",diamond);
+    mDiamondLabel->setString(str->getCString());
 }
 
 void MenuTopBarLayer::UpdateTime(float _time)

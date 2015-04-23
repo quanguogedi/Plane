@@ -26,8 +26,16 @@ void DataManager::Init()
     mMissileLevel = 0;
     mArmorLevel = 0;
     mWingPlaneLevel = 0;
-    mGameLevel = 0;
+    
     SetPlayerType(1);
+}
+
+void DataManager::ResetData()
+{
+    mGameLevel = 0;
+    mScore = 0;
+    mMaxHp = 5;
+    mHp = 5;
 }
 
 
@@ -165,6 +173,54 @@ void DataManager::SetGameLevel(int _level)
 int DataManager::GetGameLevel()
 {
     return mGameLevel;
+}
+
+void DataManager::SetScore(int _change)
+{
+    mScore += _change;
+}
+
+int DataManager::GetScore()
+{
+    return mScore;
+}
+
+void DataManager::SetHp()
+{
+    mHp--;
+}
+float DataManager::GetHpPCT()
+{
+    if (mHp < 0)
+    {
+        mHp = 0;
+    }
+    
+    return (float)mHp/mMaxHp;
+}
+
+
+
+void DataManager::PlayBMG(MusicType _type,bool _repeat)
+{
+    if (!LocalArchiveData::GetInstance()->mMusicEnable)return;
+    MusicType  currType = mBgMusicType;
+    if (mt_none == _type || currType == _type) return;
+    
+    mBgMusicType = _type;
+//    CCString * str = (CCString*)LocalStaticData::GetInstance()->GetMusicDictionary()->objectForKey(_type);
+//    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+//    SimpleAudioEngine::sharedEngine()->playBackgroundMusic(str->getCString(),mBool);
+    
+}
+
+int DataManager::PlayEffect(MusicType _type,bool _repeat)
+{
+    if (!LocalArchiveData::GetInstance()->mSoundEnable)return;
+    if (mt_none == _type) return -1;
+    return 0;
+//    CCString * str = (CCString*)LocalStaticData::GetInstance()->GetMusicDictionary()->objectForKey(_type);
+//    return  SimpleAudioEngine::sharedEngine()->playEffect(str->getCString(),mBool);
 }
 
 

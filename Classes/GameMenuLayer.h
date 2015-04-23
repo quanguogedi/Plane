@@ -16,12 +16,16 @@ class GameMenuLayer : public CCBLayer
 {
 public:
     virtual bool init();
+    virtual void onEnter();
+    virtual void onExit();
     CREATE_FUNC(GameMenuLayer);
     virtual bool onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode);
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName);
     virtual void RefreshUI();
     
-    void RefreshPropLabel();
+    void RefreshProps();
+    void RefreshScore();
+    void RefreshHp();
     
     void PauseSelector(CCObject *pSender, CCControlEvent pCCControlEvent);
     void ShieldSelector(CCObject *pSender,CCControlEvent pCCControlEvent);

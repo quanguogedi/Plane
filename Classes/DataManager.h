@@ -24,6 +24,8 @@ public:
     ~DataManager();
     void Init();
     
+    void ResetData();
+    
     void SetPlayerType(int _type);
     int GetPlayerType();
     
@@ -36,6 +38,17 @@ public:
     void SetGameLevel(int _level);
     int GetGameLevel();
     
+    void SetScore(int _change);
+    int GetScore();
+    
+    void SetHp();
+    float GetHpPCT();
+    
+    void PlayBMG(MusicType _type, bool _repeat);
+    int PlayEffect(MusicType _type, bool _repeat);
+    
+    
+    
 private:
     int mPlayerType;
     int mMainPlaneLevel;
@@ -43,6 +56,14 @@ private:
     int mArmorLevel;
     int mWingPlaneLevel;
     int mGameLevel;//开始游戏的关卡
+
+    int mScore;
+    int mMaxHp;
+    int mHp;
+    
+    MusicType mBgMusicType;
+    
+    
 };
 
 

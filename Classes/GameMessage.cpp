@@ -8,7 +8,7 @@ bool CGameMessage::init()
 		CC_BREAK_IF(! CCLayer::init());
 
 		CCSize size = CCDirector::sharedDirector()->getWinSize();
-		CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Image/Message.plist");
+		CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("res/Image/Message.plist");
 		/**	信息框	*/
 		CCSprite *pBox = CCSprite::createWithSpriteFrameName("Box.png");
         pBox->setScale(size.width/pBox->getContentSize().width);
@@ -17,14 +17,14 @@ bool CGameMessage::init()
 		this->addChild(pBox, 0);
 		
 		/**	分数	*/
-		m_pScore = CCLabelAtlas::create("0", "Image/Num.plist");
+		m_pScore = CCLabelAtlas::create("0", "res/Image/Num.plist");
 		CC_BREAK_IF(! m_pScore);
         m_pScore->setScale(2.0f);
 		this->addChild(m_pScore, 0);
 		m_pScore->setPosition(ccp(300, size.height - 50) );
 
 		/**	生命	*/
-		m_pLife = CCLabelAtlas::create("3", "Image/Num.plist");
+		m_pLife = CCLabelAtlas::create("3", "res/Image/Num.plist");
 		CC_BREAK_IF(! m_pLife);
 		this->addChild(m_pLife, 0);
         m_pLife->setScale(2.0f);
@@ -56,7 +56,7 @@ bool CGameMessage::init()
 		pMissile->setPosition(ccp(0, 0));
 		this->addChild(pMissile, 0);
 
-		m_pMissileNum = CCLabelAtlas::create("2", "Image/Num.plist");
+		m_pMissileNum = CCLabelAtlas::create("2", "res/Image/Num.plist");
 		CC_BREAK_IF(! m_pMissileNum);
         
 		m_pMissileItem->addChild(m_pMissileNum, 0);

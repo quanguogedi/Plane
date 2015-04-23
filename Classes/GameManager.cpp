@@ -149,6 +149,6 @@ void CGameManager::update(float dt)
 
 void CGameManager::back(CCObject* pSender)
 {
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Music/Title.mp3", true);
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("res/Music/Title.mp3", true);
 	CGameEvents::startFlipInterface(GAME_LEVEL);
 }

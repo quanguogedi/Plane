@@ -51,6 +51,10 @@ public:
     //LevelBottomLayer调用
     virtual void OpenStartGameLayer(){};
     
+    //GameMenuLayer调用
+    virtual void OpenPauseLayer();
+    
+    
     
 };
 

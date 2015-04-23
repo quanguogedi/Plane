@@ -254,9 +254,6 @@
 		B27C84891ADD6575003328F6 /* font in Resources */ = {isa = PBXBuildFile; fileRef = B27C84861ADD6575003328F6 /* font */; };
 		B294D92F1AE3976C001E3743 /* DataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B294D92D1AE3976C001E3743 /* DataManager.cpp */; };
 		B2D763EA1AE7D8A300EB7477 /* StartGameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2D763E81AE7D8A300EB7477 /* StartGameLayer.cpp */; };
-		B2D763EE1AE7DC5C00EB7477 /* Image in Resources */ = {isa = PBXBuildFile; fileRef = B2D763EB1AE7DC5C00EB7477 /* Image */; };
-		B2D763EF1AE7DC5C00EB7477 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = B2D763EC1AE7DC5C00EB7477 /* Music */; };
-		B2D763F01AE7DC5C00EB7477 /* new in Resources */ = {isa = PBXBuildFile; fileRef = B2D763ED1AE7DC5C00EB7477 /* new */; };
 		B2D763F31AE7E5EB00EB7477 /* GameMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2D763F11AE7E5EB00EB7477 /* GameMenuLayer.cpp */; };
 		B2E7CDFE1AD7A2BB00A0407E /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CDFC1AD7A2BB00A0407E /* BaseScene.cpp */; };
 		B2E7CE061AD7AB1D00A0407E /* AchievementCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE021AD7AB1D00A0407E /* AchievementCell.cpp */; };
@@ -280,6 +277,7 @@
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		C01D82C61AE8FD6E0026CBE1 /* PauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C01D82C41AE8FD6E0026CBE1 /* PauseLayer.cpp */; };
 		C0DAA6941AE7BEB900A67442 /* LevelContainerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0DAA6921AE7BEB900A67442 /* LevelContainerLayer.cpp */; };
 		C0EEDF541AE01102007C5069 /* LocalArchiveData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0EEDF521AE01102007C5069 /* LocalArchiveData.cpp */; };
 		C0EEDF551AE01102007C5069 /* LocalStaticData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0EEDF531AE01102007C5069 /* LocalStaticData.cpp */; };
@@ -824,9 +822,6 @@
 		B294D92E1AE3976C001E3743 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = ../Classes/DataManager.h; sourceTree = "<group>"; };
 		B2D763E81AE7D8A300EB7477 /* StartGameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StartGameLayer.cpp; path = ../Classes/StartGameLayer.cpp; sourceTree = "<group>"; };
 		B2D763E91AE7D8A300EB7477 /* StartGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartGameLayer.h; path = ../Classes/StartGameLayer.h; sourceTree = "<group>"; };
-		B2D763EB1AE7DC5C00EB7477 /* Image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Image; sourceTree = "<group>"; };
-		B2D763EC1AE7DC5C00EB7477 /* Music */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Music; sourceTree = "<group>"; };
-		B2D763ED1AE7DC5C00EB7477 /* new */ = {isa = PBXFileReference; lastKnownFileType = folder; path = new; sourceTree = "<group>"; };
 		B2D763F11AE7E5EB00EB7477 /* GameMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameMenuLayer.cpp; path = ../Classes/GameMenuLayer.cpp; sourceTree = "<group>"; };
 		B2D763F21AE7E5EB00EB7477 /* GameMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameMenuLayer.h; path = ../Classes/GameMenuLayer.h; sourceTree = "<group>"; };
 		B2E7CDFC1AD7A2BB00A0407E /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseScene.cpp; path = ../Classes/BaseScene.cpp; sourceTree = "<group>"; };
@@ -870,6 +865,8 @@
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C01D82C41AE8FD6E0026CBE1 /* PauseLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PauseLayer.cpp; path = ../Classes/PauseLayer.cpp; sourceTree = "<group>"; };
+		C01D82C51AE8FD6E0026CBE1 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseLayer.h; path = ../Classes/PauseLayer.h; sourceTree = "<group>"; };
 		C0DAA6921AE7BEB900A67442 /* LevelContainerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LevelContainerLayer.cpp; path = ../Classes/LevelContainerLayer.cpp; sourceTree = "<group>"; };
 		C0DAA6931AE7BEB900A67442 /* LevelContainerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelContainerLayer.h; path = ../Classes/LevelContainerLayer.h; sourceTree = "<group>"; };
 		C0EEDF501AE01102007C5069 /* LocalArchiveData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalArchiveData.h; sourceTree = "<group>"; };
@@ -1913,9 +1910,6 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B2D763EB1AE7DC5C00EB7477 /* Image */,
-				B2D763EC1AE7DC5C00EB7477 /* Music */,
-				B2D763ED1AE7DC5C00EB7477 /* new */,
 				B27C84841ADD6575003328F6 /* CN */,
 				B27C84851ADD6575003328F6 /* fileLookup.plist */,
 				B27C84861ADD6575003328F6 /* font */,
@@ -2078,6 +2072,8 @@
 				B2D763E91AE7D8A300EB7477 /* StartGameLayer.h */,
 				B2D763F11AE7E5EB00EB7477 /* GameMenuLayer.cpp */,
 				B2D763F21AE7E5EB00EB7477 /* GameMenuLayer.h */,
+				C01D82C41AE8FD6E0026CBE1 /* PauseLayer.cpp */,
+				C01D82C51AE8FD6E0026CBE1 /* PauseLayer.h */,
 			);
 			name = CCB;
 			sourceTree = "<group>";
@@ -2156,8 +2152,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2D763F01AE7DC5C00EB7477 /* new in Resources */,
-				B2D763EF1AE7DC5C00EB7477 /* Music in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				B20E59E61A20430700D99106 /* res in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
@@ -2168,7 +2162,6 @@
 				B27C84871ADD6575003328F6 /* CN in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
-				B2D763EE1AE7DC5C00EB7477 /* Image in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 			);
@@ -2277,6 +2270,7 @@
 				15A3D9AB1682F7F9002FB0C5 /* cpSpace.c in Sources */,
 				15A3D9AC1682F7F9002FB0C5 /* cpSpaceComponent.c in Sources */,
 				15A3D9AD1682F7F9002FB0C5 /* cpSpaceHash.c in Sources */,
+				C01D82C61AE8FD6E0026CBE1 /* PauseLayer.cpp in Sources */,
 				15A3D9AE1682F7F9002FB0C5 /* cpSpaceQuery.c in Sources */,
 				15A3D9AF1682F7F9002FB0C5 /* cpSpaceStep.c in Sources */,
 				15A3D9B01682F7F9002FB0C5 /* cpSpatialIndex.c in Sources */,

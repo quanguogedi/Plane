@@ -7,9 +7,9 @@ bool CItemManager::init()
 	do{
 		CC_BREAK_IF(! CCLayer::init());
 		m_iItemCout = 0;
-		m_pItemList = CCSpriteBatchNode::create("Image/Item.png");
+		m_pItemList = CCSpriteBatchNode::create("res/Image/Item.png");
 		this->addChild(m_pItemList);
-		CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Image/Item.plist");
+		CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("res/Image/Item.plist");
 		this->scheduleUpdate();
 		bRet = true;
 	}

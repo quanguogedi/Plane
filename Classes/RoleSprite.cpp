@@ -53,7 +53,7 @@ void CRoleSprite::hurt(int iHarm)
 		m_pSprite->stopAllActions();
 		this->unscheduleAllSelectors();
 		m_iLife--;
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("Music/Explosion.mp3");
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("res/Music/Explosion.mp3");
 		explosion();
 	}
 }

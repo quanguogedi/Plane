@@ -62,6 +62,6 @@ bool CGameOver::init()
 
 void CGameOver::back(CCObject* pSender)
 {
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Music/Title.mp3", true);
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("res/Music/Title.mp3", true);
 	CGameEvents::startFlipInterface(GAME_MENU);
 }

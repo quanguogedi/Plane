@@ -41,12 +41,14 @@ SEL_MenuHandler SettingsLayer::onResolveCCBCCMenuItemSelector(CCObject * pTarget
 void SettingsLayer::MusicSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
 {
     mMusicSign->setVisible(!mMusicSign->isVisible());
+    LocalArchiveData::GetInstance()->SaveMusicEnable(mMusicSign->isVisible());
 }
 
 
 void SettingsLayer::SoundSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
 {
     mSoundSign->setVisible(!mSoundSign->isVisible());
+    LocalArchiveData::GetInstance()->SaveSoundEnable(mSoundSign->isVisible());
 }
 
 void SettingsLayer::CloseSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)

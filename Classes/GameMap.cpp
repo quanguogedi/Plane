@@ -16,7 +16,7 @@ bool CGameMap::init()
 //		this->addChild(m_pMap, 0);
 //		m_pMap->runAction(CCMoveTo::create(100.0f, ccp(size.width/2, -(600 - size.height))));
         
-        mBgFirst = CCSprite::create("new/sense_01.png");
+        mBgFirst = CCSprite::create("res/new/sense_01.png");
         mBgFirst->setScaleY(size.height / mBgFirst->getContentSize().height);
         mBgFirst->setAnchorPoint(ccp(0.5, 0));
         mBgFirst->setPosition(ccp(size.width * 0.5, 0));
@@ -25,7 +25,7 @@ bool CGameMap::init()
         mBgHeight = mBgFirst->boundingBox().size.height;
         mBgOffsetY = mBgFirst->boundingBox().size.height;
         
-        mBgSecond = CCSprite::create("new/sense_01.png");
+        mBgSecond = CCSprite::create("res/new/sense_01.png");
         mBgSecond->setScaleY(size.height / mBgSecond->getContentSize().height);
         mBgSecond->setAnchorPoint(ccp(0.5, 0));
         mBgSecond->setPosition(ccp(size.width * 0.5, mBgHeight - 1));

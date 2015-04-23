@@ -19,20 +19,45 @@ LocalArchiveData::LocalArchiveData()
 
 void LocalArchiveData::LoadArchiveData()
 {
-    
-    
-    mIsScoundEnable = CocosSaveManager::GetInstance()->getIntegerForKey("SoundState",true);
-    mIsMusicEnable = CocosSaveManager::GetInstance()->getIntegerForKey("MusicState",true);
-    
+    mSoundEnable = CocosSaveManager::GetInstance()->getBoolForKey("SoundEnable",true);
+    mMusicEnable = CocosSaveManager::GetInstance()->getBoolForKey("MusicEnable",true);
+    mDiamondCount = CocosSaveManager::GetInstance()->getIntegerForKey("DiamondCount",1234);
+    mKillerCount = CocosSaveManager::GetInstance()->getIntegerForKey("KillerCount", 3);
+    mShieldCount = CocosSaveManager::GetInstance()->getIntegerForKey("ShieldCount", 3);
 
 }
 
-void LocalArchiveData::SaveArchiveData()
+void LocalArchiveData::SaveSoundEnable(bool _enable)
 {
-    CocosSaveManager::GetInstance()->setIntegerForKey("SoundState", mIsScoundEnable);
-    CocosSaveManager::GetInstance()->setIntegerForKey("MusicState", mIsMusicEnable);
-
+    mSoundEnable = _enable;
+    CocosSaveManager::GetInstance()->setBoolForKey("SoundEnable", mSoundEnable);
 }
+
+void LocalArchiveData::SaveMusicEnable(bool _enable)
+{
+    mMusicEnable = _enable;
+    CocosSaveManager::GetInstance()->setBoolForKey("MusicEnable", mMusicEnable);
+}
+
+void LocalArchiveData::SaveDiamondCount(int _change)
+{
+    mDiamondCount += _change;
+    CocosSaveManager::GetInstance()->setIntegerForKey("DiamondCount", mDiamondCount);
+}
+
+void LocalArchiveData::SaveKillerCount(int _change)
+{
+    mKillerCount += _change;
+    CocosSaveManager::GetInstance()->setIntegerForKey("KillerCount", mKillerCount);
+}
+
+void LocalArchiveData::SaveShieldCount(int _change)
+{
+    mShieldCount += _change;
+    CocosSaveManager::GetInstance()->setIntegerForKey("ShieldCount",mShieldCount );
+}
+
+
 
 void LocalArchiveData::SavePlayerData(int _type, int _value)
 {

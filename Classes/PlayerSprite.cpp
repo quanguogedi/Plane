@@ -118,7 +118,7 @@ void CPlayerSprite::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 
 void CPlayerSprite::setWinMove()
 {
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("Music/Fly.mp3");
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("res/Music/Fly.mp3");
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	this->unscheduleAllSelectors();
 	this->setTouchEnabled(false);
@@ -140,7 +140,7 @@ void CPlayerSprite::win(CCNode *pSender)
 float subMissileTime;
 void CPlayerSprite::shoot(float dt)
 {
-	m_iShootSoundId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("Music/Shoot.mp3");
+	m_iShootSoundId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("res/Music/Shoot.mp3");
 	CCPoint pos = m_pSprite->getPosition();
     
 //    //≈‰÷√1
@@ -186,7 +186,7 @@ void CPlayerSprite::destroy(CCNode *pSender)
 	clearShoot();
 	if(m_iLife <= 0)
 	{
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Music/GameOver.mp3");
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("res/Music/GameOver.mp3");
 		CGameEvents::startFlipInterface(GAME_OVER);
 	}
 	else 
@@ -201,12 +201,12 @@ void CPlayerSprite::gainItem(int iType, int iScore)
 	switch(iType)
 	{
 	case 0:
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("Music/GainGold.mp3");
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("res/Music/GainGold.mp3");
 		break;
 	case 1:
 		if(m_iBulletNum < 6)
 			m_iBulletNum++;
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("Music/GainJewel.mp3");
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("res/Music/GainJewel.mp3");
 		break;
 	case 2:
 		if(m_bShield)
@@ -218,15 +218,15 @@ void CPlayerSprite::gainItem(int iType, int iScore)
 		{
 			setShield();
 		}
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("Music/GainJewel.mp3");
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("res/Music/GainJewel.mp3");
 		break;
 	case 3:
 		m_iHp = m_iHpMax;
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("Music/GainJewel.mp3");
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("res/Music/GainJewel.mp3");
 		break;
 	case 4:
 		m_iMissileNum++;
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("Music/GainMissile.mp3");
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("res/Music/GainMissile.mp3");
 		break;
 	default:
 		break;
@@ -327,7 +327,7 @@ void CPlayerSprite::createMissile()
 
 void CPlayerSprite::MissileExplore(CCNode *pSender)
 {
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("Music/MissileExplosion.mp3");
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("res/Music/MissileExplosion.mp3");
 	CCArray *pAnimFrames = CCArray::create();
 	char str[64] = {0};
 	for (int i = 1; i < 13; i++)

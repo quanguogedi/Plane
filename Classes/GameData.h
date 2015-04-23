@@ -89,6 +89,15 @@ private:
 
 
 //杨延飞 添加
+
+typedef enum  _MusicType
+{
+    mt_none = 0,
+    
+} MusicType;
+
+
+
 class UpgradeData : public CCObject
 {
 public:
