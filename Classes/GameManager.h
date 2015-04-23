@@ -8,6 +8,7 @@
 #include "GameMap.h"
 #include "GameMessage.h"
 #include "GameEvents.h"
+#include "PauseLayer.h"
 
 using namespace cocos2d;
 
@@ -38,6 +39,9 @@ public:
 	/**	创建函数	*/
 	static CGameManager* create();
 
+    
+    //GameMenuLayer调用
+    virtual void OpenPauseLayer();
 private:
 	/**	更新函数	*/
 	void update(float dt);
@@ -51,4 +55,7 @@ private:
 	static CItemManager *m_pItemManager;		///<物品管理
 	static CGameMap *m_pGameMap;				///<游戏地图
 	CGameMessage *m_pGameMessage;				///<玩家信息
+    
+    
+    PauseLayer * mPauseLayer;
 };

@@ -20,9 +20,17 @@ public:
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName);
     virtual void RefreshUI();
     
-    void StartSelector(CCObject *pSender, CCControlEvent pCCControlEvent);
-    void CloseSelector(CCObject *pSender,CCControlEvent pCCControlEvent);
+    void GiftSelector(CCObject *pSender, CCControlEvent pCCControlEvent);
+    void ContinueSelector(CCObject *pSender,CCControlEvent pCCControlEvent);
+    void BackMainSelector(CCObject *pSender,CCControlEvent pCCControlEvent);
+    void OpenMusicSelector(CCObject *pSender,CCControlEvent pCCControlEvent);
+    void CloseMusicSelector(CCObject *pSender,CCControlEvent pCCControlEvent);
+    void BuyKillerSelector(CCObject *pSender,CCControlEvent pCCControlEvent);
+    void BuyShieldSelector(CCObject *pSender,CCControlEvent pCCControlEvent);
     
+private:
+    CCMenuItemImage * mCloseItem;
+    CCMenuItemImage * mOpenItem;
     
 };
 

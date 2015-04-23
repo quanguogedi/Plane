@@ -97,6 +97,8 @@ bool CGameManager::init()
         //Ìí¼ÓGameMenuLayer
         CCNode * menu = CCBManager::LoadCCBByNameAndLoader("GameMenuLayer", GameMenuLayerLoader::loader());
         this->addChild(menu,99);
+        
+        
 //		/**	Ìí¼Ó²Ëµ¥	*/
 //		CCMenu *pMenu = CCMenu::create(pBack, NULL);
 //		pMenu->setPosition(ccp(0, 0));
@@ -152,3 +154,19 @@ void CGameManager::back(CCObject* pSender)
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("res/Music/Title.mp3", true);
 	CGameEvents::startFlipInterface(GAME_LEVEL);
 }
+
+
+void CGameManager::OpenPauseLayer()
+{
+    if (!mPauseLayer)
+    {
+        mPauseLayer = (PauseLayer*)CCBManager::LoadCCBByNameAndLoader("PauseLayer", PauseLayerLoader::loader());
+        mPauseLayer->SetDelegate(this);
+        addChild(mPauseLayer);
+        
+    }
+    
+    ShowLayer(mPauseLayer);
+}
+
+

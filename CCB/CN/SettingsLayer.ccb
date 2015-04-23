@@ -146,8 +146,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>animatedProperties</key>
@@ -313,7 +311,7 @@
 												<key>value</key>
 												<array>
 													<real>254.78533935546875</real>
-													<real>257.66854858398438</real>
+													<real>258.66854858398438</real>
 													<integer>0</integer>
 												</array>
 											</dict>
