@@ -83,6 +83,7 @@ void GameMenuLayer::PauseSelector(cocos2d::CCObject *pSender, CCControlEvent pCC
 //    CGameEvents::startFlipInterface(GAME_START);
     if (mDelegate)
     {
+        
         mDelegate->OpenPauseLayer();
     }
 }

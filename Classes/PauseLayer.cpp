@@ -63,6 +63,17 @@ void PauseLayer::ContinueSelector(cocos2d::CCObject *pSender, CCControlEvent pCC
 {
     if (mDelegate)
     {
+        CCArray * array = CCDirector::sharedDirector()->getRunningScene()->getChildByTag(12306)->getChildren();
+        CCObject *object = NULL;
+        CCARRAY_FOREACH(array, object)
+        {
+            CCLayer * layer = (CCLayer*)object;
+            if (layer != this)
+            {
+                layer->onEnter();
+            }
+            
+        }
         mDelegate->HideLayer();
     }
 }

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8E7C0EA6-07DB-4F2F-B269-CEAAB60D2955</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Plane</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BC812729E14C66FA7D6E7E894E50A3A50F165574</key>
 		<string>github.com:quanguogedi/Plane.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>proj.ios/Plane.xcodeproj/project.xcworkspace</string>
+	<string>proj.ios/Plane.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BC812729E14C66FA7D6E7E894E50A3A50F165574</key>

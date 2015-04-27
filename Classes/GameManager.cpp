@@ -17,6 +17,7 @@ CCScene* CGameManager::scene()
 		CC_BREAK_IF(! scene);
 
 		CGameManager *layer = CGameManager::create();
+        layer->setTag(12306);
 		CC_BREAK_IF(! layer);
 
 		scene->addChild(layer);
@@ -95,7 +96,8 @@ bool CGameManager::init()
 		pBack->setPosition(ccp(size.width - 39, 21));
 
         //Ìí¼ÓGameMenuLayer
-        CCNode * menu = CCBManager::LoadCCBByNameAndLoader("GameMenuLayer", GameMenuLayerLoader::loader());
+        GameMenuLayer * menu = (GameMenuLayer*)CCBManager::LoadCCBByNameAndLoader("GameMenuLayer", GameMenuLayerLoader::loader());
+        menu->SetDelegate(this);
         this->addChild(menu,99);
         
         
@@ -163,7 +165,16 @@ void CGameManager::OpenPauseLayer()
         mPauseLayer = (PauseLayer*)CCBManager::LoadCCBByNameAndLoader("PauseLayer", PauseLayerLoader::loader());
         mPauseLayer->SetDelegate(this);
         addChild(mPauseLayer);
-        
+    }
+    
+    CCArray * array = CCDirector::sharedDirector()->getRunningScene()->getChildByTag(12306)->getChildren();
+    CCObject *object = NULL;
+    CCARRAY_FOREACH(array, object)
+    {
+        CCLayer * layer = (CCLayer*)object;
+        if (layer != mPauseLayer ) {
+            layer->onExit();
+        }
     }
     
     ShowLayer(mPauseLayer);
