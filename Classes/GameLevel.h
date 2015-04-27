@@ -1,7 +1,6 @@
 #pragma once
 
 #include "BaseScene.h"
-#include "LevelListLayer.h"
 #include "MenuTopBarLayer.h"
 #include "LevelBottomLayer.h"
 #include "BuyDiamondLayer.h"
@@ -56,7 +55,6 @@ private:
     
 
 private:
-    LevelListLayer* mLevelListLayer;
     MenuTopBarLayer * mMenuTopBarLayer;
     LevelBottomLayer * mLevelBottomLayer;
     BuyDiamondLayer * mBuyDiamondLayer;

@@ -323,8 +323,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>
@@ -1065,11 +1063,11 @@
 			<key>length</key>
 			<real>0.26666668057441711</real>
 			<key>name</key>
-			<string>Default Timeline</string>
+			<string>Show</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.26666668057441711</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

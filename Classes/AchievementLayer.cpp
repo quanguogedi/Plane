@@ -78,14 +78,12 @@ void AchievementLayer::InitAchievementList()
     
     CCDictionary* dict = PrototypeDataManager::GetSingleton().GetAllAchievementDataDict();
     
-    int num = dict->count();
-    int col = 150;
+    int num = 20;//dict->count();
+    int col = 138;
     
-    int containerHeight = col * num + (num -1)*100;
-    
-    int nn = containerHeight/size.height + 1;
-    
-    mContainerNode->setContentSize(CCSizeMake(size.width,nn *  size.height  ));
+    int containerHeight = col * num + (num+1)*10;
+
+    mContainerNode->setContentSize(CCSizeMake(size.width,containerHeight));//nn *  size.height
     
     for (int i = 0; i < num; i++)
     {
@@ -97,7 +95,8 @@ void AchievementLayer::InitAchievementList()
         
         AchievementCell* cell = (AchievementCell*)CCBManager::LoadCCBByNameAndLoader("AchievementCell", AchievementCellLoader::loader());
         cell->SetCell(data);
-        cell->setPosition(ccp(size.width * 0.5, mContainerNode->getContentSize().height-30 -(col + 10) * i));
+        cell->setPosition(ccp(size.width * 0.5, mContainerNode->getContentSize().height-10 -(col + 10) * i));
+
         mContainerNode->addChild(cell);
     }
     

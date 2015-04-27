@@ -60,10 +60,18 @@ void CBaseScene::keyBackClicked()
 void CBaseScene::ShowLayer(CCBLayer *_layer)
 {
     
-    if (!_layer->GetIsTheDialog() && mLayerStack.size() > 0)
+    if (mLayerStack.size() > 0)
     {
-        mLayerStack.top()->Hide();
+        if (mLayerStack.top()->GetIsTheDialog() || (!_layer->GetIsTheDialog() && !mLayerStack.top()->GetIsTheDialog() )) {
+            mLayerStack.top()->Hide();
+
+        }
     }
+    
+//    if (_layer->GetIsTheDialog() && mLayerStack.size() > 0 && mLayerStack.top()->GetIsTheDialog())//!_layer->GetIsTheDialog() &&
+//    {
+//        mLayerStack.top()->Hide();
+//    }
     
 
     _layer->Show();
