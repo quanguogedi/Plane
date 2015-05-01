@@ -1,7 +1,8 @@
 #include "GameOver.h"
+
 #include "GameEvents.h"
-#include "FourthLayer.h"
-#include "CCBManager.h"
+
+#include "GameOverLayer.h"
 CCScene* CGameOver::scene()
 {
     CCScene * scene = NULL;
@@ -35,24 +36,13 @@ bool CGameOver::init()
 		/**	背景	*/
 		CCSprite *pBackGround = CCSprite::create("res/ui_bj_01.png");
 		CC_BREAK_IF(! pBackGround);
-//        pBackGround->setScale(2.5f);
+
 		pBackGround->setPosition(ccp(size.width/2, size.height/2));
 		this->addChild(pBackGround, 0);
         
-        CCNode * fourthLayer = CCBManager::LoadCCBByNameAndLoader("FourthLayer",FourthLayerLoader::loader());
-        this->addChild(fourthLayer,1);
-
-		/**	设置返回按钮	*/
-		CCMenuItemImage *pBack = CCMenuItemImage::create();       
-		pBack->initWithTarget(this, menu_selector(CGameOver::back));      
-		pBack->setNormalSpriteFrame(CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("Back.png"));  
-		pBack->setSelectedSpriteFrame(CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("Back.png"));
-		pBack->setPosition(ccp(size.width - 39, 21));
-
-		/**	添加菜单	*/
-		CCMenu *pMenu = CCMenu::create(pBack, NULL);
-		pMenu->setPosition(ccp(0, 0));
-//		this->addChild(pMenu, 6);
+        GameOverLayer * overLayer = (GameOverLayer*)CCBManager::LoadCCBByNameAndLoader("GameOverLayer",GameOverLayerLoader::loader());
+        this->addChild(overLayer);
+        overLayer->Show();
 
 		bRet = true;
 	}while(0);
@@ -60,8 +50,9 @@ bool CGameOver::init()
 	return bRet;
 }
 
-void CGameOver::back(CCObject* pSender)
+
+void CGameOver::SwitchToPrevScene()
 {
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("res/Music/Title.mp3", true);
-	CGameEvents::startFlipInterface(GAME_MENU);
+    CGameEvents::startFlipInterface(GAME_LEVEL);
 }
+

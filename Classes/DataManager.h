@@ -44,9 +44,20 @@ public:
     void SetHp();
     float GetHpPCT();
     
+    void SetDiamond(int _diamond);
+    int GetDiamond();
+    
+    void SetStar(int _star);
+    int GetStar();
+    
+    void SetResult(bool _result);
+    bool GetResult();
+    
+    void SetLevelState(bool _state);
+    bool GetLevelState();
+    
     void PlayBMG(MusicType _type, bool _repeat);
     int PlayEffect(MusicType _type, bool _repeat);
-    
     
     
 private:
@@ -60,6 +71,12 @@ private:
     int mScore;
     int mMaxHp;
     int mHp;
+    
+    int mDiamond;
+    int mStar;
+    
+    bool mResult;
+    bool mLevelState;//管卡场景的状态 如果true 要显示强化战机界面
     
     MusicType mBgMusicType;
     

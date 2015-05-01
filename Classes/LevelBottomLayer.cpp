@@ -242,7 +242,7 @@ void LevelBottomLayer::GiftSelector(CCObject *pSender, CCControlEvent pCCControl
 {
     if (mDelegate)
     {
-        mDelegate->OpenGiftLayer();
+        mDelegate->OpenGiftBagLayer();
     }
 }
 

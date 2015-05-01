@@ -56,7 +56,10 @@ void PauseLayer::RefreshUI()
 
 void PauseLayer::GiftSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
 {
-    
+    if (mDelegate)
+    {
+        mDelegate->OpenGiftBagLayer();
+    }
 }
 
 void PauseLayer::ContinueSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)

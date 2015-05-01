@@ -110,7 +110,8 @@ void CEnemyManager::CreateEnemyByTime(float time)
     {
         if(!subData->mEnemyType)
         {
-            CGameEvents::startFlipInterface(GAME_CLEAR);
+            DataManager::GetInstance()->SetResult(true);
+            CGameEvents::startFlipInterface(GAME_OVER);
             return;
         }
         

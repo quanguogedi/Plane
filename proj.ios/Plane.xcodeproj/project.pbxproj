@@ -262,11 +262,7 @@
 		B2E7CE0F1AD7AB4000A0407E /* CCBManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE0A1AD7AB4000A0407E /* CCBManager.cpp */; };
 		B2E7CE101AD7AB4000A0407E /* ChooseMapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE0C1AD7AB4000A0407E /* ChooseMapLayer.cpp */; };
 		B2E7CE241AD7AB7A00A0407E /* MenuBottomLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE131AD7AB7A00A0407E /* MenuBottomLayer.cpp */; };
-		B2E7CE251AD7AB7A00A0407E /* FourthLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE151AD7AB7A00A0407E /* FourthLayer.cpp */; };
-		B2E7CE261AD7AB7A00A0407E /* LevelListLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE171AD7AB7A00A0407E /* LevelListLayer.cpp */; };
-		B2E7CE271AD7AB7A00A0407E /* SecondLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE191AD7AB7A00A0407E /* SecondLayer.cpp */; };
 		B2E7CE281AD7AB7A00A0407E /* SettingsLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE1B1AD7AB7A00A0407E /* SettingsLayer.cpp */; };
-		B2E7CE291AD7AB7A00A0407E /* ThirdLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE1D1AD7AB7A00A0407E /* ThirdLayer.cpp */; };
 		B2E7CE2A1AD7AB7A00A0407E /* UpgradeLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE1F1AD7AB7A00A0407E /* UpgradeLayer.cpp */; };
 		B2E7CE2F1AD7AC3200A0407E /* MenuTopBarLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE2D1AD7AC3200A0407E /* MenuTopBarLayer.cpp */; };
 		B2E7CE331AD7CFC900A0407E /* BuyDiamondLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2E7CE311AD7CFC900A0407E /* BuyDiamondLayer.cpp */; };
@@ -279,6 +275,8 @@
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
 		C01D82C61AE8FD6E0026CBE1 /* PauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C01D82C41AE8FD6E0026CBE1 /* PauseLayer.cpp */; };
 		C0DAA6941AE7BEB900A67442 /* LevelContainerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0DAA6921AE7BEB900A67442 /* LevelContainerLayer.cpp */; };
+		C0E1D6891AF35A2D003D3C85 /* GameOverLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0E1D6871AF35A2D003D3C85 /* GameOverLayer.cpp */; };
+		C0E1D68D1AF38AA2003D3C85 /* GiftBagLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0E1D68B1AF38AA2003D3C85 /* GiftBagLayer.cpp */; };
 		C0EEDF541AE01102007C5069 /* LocalArchiveData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0EEDF521AE01102007C5069 /* LocalArchiveData.cpp */; };
 		C0EEDF551AE01102007C5069 /* LocalStaticData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0EEDF531AE01102007C5069 /* LocalStaticData.cpp */; };
 		C0EEDF591AE014B5007C5069 /* CocosSaveManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0EEDF581AE014B5007C5069 /* CocosSaveManager.cpp */; };
@@ -838,16 +836,8 @@
 		B2E7CE0D1AD7AB4000A0407E /* ChooseMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseMapLayer.h; path = ../Classes/ChooseMapLayer.h; sourceTree = "<group>"; };
 		B2E7CE131AD7AB7A00A0407E /* MenuBottomLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MenuBottomLayer.cpp; path = ../Classes/MenuBottomLayer.cpp; sourceTree = "<group>"; };
 		B2E7CE141AD7AB7A00A0407E /* MenuBottomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBottomLayer.h; path = ../Classes/MenuBottomLayer.h; sourceTree = "<group>"; };
-		B2E7CE151AD7AB7A00A0407E /* FourthLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FourthLayer.cpp; path = ../Classes/FourthLayer.cpp; sourceTree = "<group>"; };
-		B2E7CE161AD7AB7A00A0407E /* FourthLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FourthLayer.h; path = ../Classes/FourthLayer.h; sourceTree = "<group>"; };
-		B2E7CE171AD7AB7A00A0407E /* LevelListLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LevelListLayer.cpp; path = ../Classes/LevelListLayer.cpp; sourceTree = "<group>"; };
-		B2E7CE181AD7AB7A00A0407E /* LevelListLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelListLayer.h; path = ../Classes/LevelListLayer.h; sourceTree = "<group>"; };
-		B2E7CE191AD7AB7A00A0407E /* SecondLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SecondLayer.cpp; path = ../Classes/SecondLayer.cpp; sourceTree = "<group>"; };
-		B2E7CE1A1AD7AB7A00A0407E /* SecondLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondLayer.h; path = ../Classes/SecondLayer.h; sourceTree = "<group>"; };
 		B2E7CE1B1AD7AB7A00A0407E /* SettingsLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SettingsLayer.cpp; path = ../Classes/SettingsLayer.cpp; sourceTree = "<group>"; };
 		B2E7CE1C1AD7AB7A00A0407E /* SettingsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsLayer.h; path = ../Classes/SettingsLayer.h; sourceTree = "<group>"; };
-		B2E7CE1D1AD7AB7A00A0407E /* ThirdLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ThirdLayer.cpp; path = ../Classes/ThirdLayer.cpp; sourceTree = "<group>"; };
-		B2E7CE1E1AD7AB7A00A0407E /* ThirdLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThirdLayer.h; path = ../Classes/ThirdLayer.h; sourceTree = "<group>"; };
 		B2E7CE1F1AD7AB7A00A0407E /* UpgradeLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UpgradeLayer.cpp; path = ../Classes/UpgradeLayer.cpp; sourceTree = "<group>"; };
 		B2E7CE201AD7AB7A00A0407E /* UpgradeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpgradeLayer.h; path = ../Classes/UpgradeLayer.h; sourceTree = "<group>"; };
 		B2E7CE2C1AD7ABA800A0407E /* CCBDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCBDelegate.h; path = ../Classes/CCBDelegate.h; sourceTree = "<group>"; };
@@ -869,6 +859,10 @@
 		C01D82C51AE8FD6E0026CBE1 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseLayer.h; path = ../Classes/PauseLayer.h; sourceTree = "<group>"; };
 		C0DAA6921AE7BEB900A67442 /* LevelContainerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LevelContainerLayer.cpp; path = ../Classes/LevelContainerLayer.cpp; sourceTree = "<group>"; };
 		C0DAA6931AE7BEB900A67442 /* LevelContainerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelContainerLayer.h; path = ../Classes/LevelContainerLayer.h; sourceTree = "<group>"; };
+		C0E1D6871AF35A2D003D3C85 /* GameOverLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameOverLayer.cpp; path = ../Classes/GameOverLayer.cpp; sourceTree = "<group>"; };
+		C0E1D6881AF35A2D003D3C85 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = ../Classes/GameOverLayer.h; sourceTree = "<group>"; };
+		C0E1D68B1AF38AA2003D3C85 /* GiftBagLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GiftBagLayer.cpp; path = ../Classes/GiftBagLayer.cpp; sourceTree = "<group>"; };
+		C0E1D68C1AF38AA2003D3C85 /* GiftBagLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GiftBagLayer.h; path = ../Classes/GiftBagLayer.h; sourceTree = "<group>"; };
 		C0EEDF501AE01102007C5069 /* LocalArchiveData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalArchiveData.h; sourceTree = "<group>"; };
 		C0EEDF511AE01102007C5069 /* LocalStaticData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalStaticData.h; sourceTree = "<group>"; };
 		C0EEDF521AE01102007C5069 /* LocalArchiveData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocalArchiveData.cpp; sourceTree = "<group>"; };
@@ -2036,16 +2030,8 @@
 				B2E7CE0B1AD7AB4000A0407E /* CCBManager.h */,
 				B2E7CE131AD7AB7A00A0407E /* MenuBottomLayer.cpp */,
 				B2E7CE141AD7AB7A00A0407E /* MenuBottomLayer.h */,
-				B2E7CE151AD7AB7A00A0407E /* FourthLayer.cpp */,
-				B2E7CE161AD7AB7A00A0407E /* FourthLayer.h */,
-				B2E7CE171AD7AB7A00A0407E /* LevelListLayer.cpp */,
-				B2E7CE181AD7AB7A00A0407E /* LevelListLayer.h */,
-				B2E7CE191AD7AB7A00A0407E /* SecondLayer.cpp */,
-				B2E7CE1A1AD7AB7A00A0407E /* SecondLayer.h */,
 				B2E7CE1B1AD7AB7A00A0407E /* SettingsLayer.cpp */,
 				B2E7CE1C1AD7AB7A00A0407E /* SettingsLayer.h */,
-				B2E7CE1D1AD7AB7A00A0407E /* ThirdLayer.cpp */,
-				B2E7CE1E1AD7AB7A00A0407E /* ThirdLayer.h */,
 				B2E7CE1F1AD7AB7A00A0407E /* UpgradeLayer.cpp */,
 				B2E7CE201AD7AB7A00A0407E /* UpgradeLayer.h */,
 				B2E7CE0C1AD7AB4000A0407E /* ChooseMapLayer.cpp */,
@@ -2074,6 +2060,10 @@
 				B2D763F21AE7E5EB00EB7477 /* GameMenuLayer.h */,
 				C01D82C41AE8FD6E0026CBE1 /* PauseLayer.cpp */,
 				C01D82C51AE8FD6E0026CBE1 /* PauseLayer.h */,
+				C0E1D6871AF35A2D003D3C85 /* GameOverLayer.cpp */,
+				C0E1D6881AF35A2D003D3C85 /* GameOverLayer.h */,
+				C0E1D68B1AF38AA2003D3C85 /* GiftBagLayer.cpp */,
+				C0E1D68C1AF38AA2003D3C85 /* GiftBagLayer.h */,
 			);
 			name = CCB;
 			sourceTree = "<group>";
@@ -2203,6 +2193,7 @@
 				15A3D9101682F7D5002FB0C5 /* b2Timer.cpp in Sources */,
 				15A3D9111682F7D5002FB0C5 /* b2Body.cpp in Sources */,
 				15A3D9121682F7D5002FB0C5 /* b2ContactManager.cpp in Sources */,
+				C0E1D6891AF35A2D003D3C85 /* GameOverLayer.cpp in Sources */,
 				15A3D9131682F7D5002FB0C5 /* b2Fixture.cpp in Sources */,
 				15A3D9141682F7D5002FB0C5 /* b2Island.cpp in Sources */,
 				15A3D9151682F7D5002FB0C5 /* b2World.cpp in Sources */,
@@ -2219,7 +2210,6 @@
 				15A3D91C1682F7D5002FB0C5 /* b2EdgeAndCircleContact.cpp in Sources */,
 				B26DF38419FCF77100752273 /* GameMenu.cpp in Sources */,
 				15A3D91D1682F7D5002FB0C5 /* b2EdgeAndPolygonContact.cpp in Sources */,
-				B2E7CE291AD7AB7A00A0407E /* ThirdLayer.cpp in Sources */,
 				15A3D91E1682F7D5002FB0C5 /* b2PolygonAndCircleContact.cpp in Sources */,
 				15A3D91F1682F7D5002FB0C5 /* b2PolygonContact.cpp in Sources */,
 				15A3D9201682F7D5002FB0C5 /* b2DistanceJoint.cpp in Sources */,
@@ -2253,7 +2243,6 @@
 				15A3D99E1682F7F9002FB0C5 /* cpRatchetJoint.c in Sources */,
 				15A3D99F1682F7F9002FB0C5 /* cpRotaryLimitJoint.c in Sources */,
 				15A3D9A01682F7F9002FB0C5 /* cpSimpleMotor.c in Sources */,
-				B2E7CE261AD7AB7A00A0407E /* LevelListLayer.cpp in Sources */,
 				15A3D9A11682F7F9002FB0C5 /* cpSlideJoint.c in Sources */,
 				15A3D9A21682F7F9002FB0C5 /* cpArbiter.c in Sources */,
 				3449FF681A73690400913E7B /* PrototypeDataManager.cpp in Sources */,
@@ -2265,6 +2254,7 @@
 				15A3D9A61682F7F9002FB0C5 /* cpBody.c in Sources */,
 				15A3D9A71682F7F9002FB0C5 /* cpCollision.c in Sources */,
 				15A3D9A81682F7F9002FB0C5 /* cpHashSet.c in Sources */,
+				C0E1D68D1AF38AA2003D3C85 /* GiftBagLayer.cpp in Sources */,
 				15A3D9A91682F7F9002FB0C5 /* cpPolyShape.c in Sources */,
 				15A3D9AA1682F7F9002FB0C5 /* cpShape.c in Sources */,
 				15A3D9AB1682F7F9002FB0C5 /* cpSpace.c in Sources */,
@@ -2320,7 +2310,6 @@
 				B26DF37B19FCF77100752273 /* BulletSprite.cpp in Sources */,
 				15A3DA4F1682F826002FB0C5 /* CCControlSlider.cpp in Sources */,
 				15A3DA501682F826002FB0C5 /* CCControlStepper.cpp in Sources */,
-				B2E7CE251AD7AB7A00A0407E /* FourthLayer.cpp in Sources */,
 				15A3DA511682F826002FB0C5 /* CCControlSwitch.cpp in Sources */,
 				B26DF38019FCF77100752273 /* GameEvents.cpp in Sources */,
 				15A3DA521682F826002FB0C5 /* CCControlUtils.cpp in Sources */,
@@ -2424,7 +2413,6 @@
 				379BB9C217F03F3700829B88 /* UIImageView.cpp in Sources */,
 				B26DF37C19FCF77100752273 /* CCRadioMenu.cpp in Sources */,
 				379BB9C317F03F3700829B88 /* UILabel.cpp in Sources */,
-				B2E7CE271AD7AB7A00A0407E /* SecondLayer.cpp in Sources */,
 				379BB9C417F03F3700829B88 /* UILabelAtlas.cpp in Sources */,
 				379BB9C517F03F3700829B88 /* UILabelBMFont.cpp in Sources */,
 				379BB9C617F03F3700829B88 /* UILoadingBar.cpp in Sources */,

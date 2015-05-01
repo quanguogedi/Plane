@@ -14,7 +14,7 @@ public:
 	/**	创建函数	*/
 	CREATE_FUNC(CGameOver);
 
+    virtual void SwitchToPrevScene();
 private:
-	/**	返回按钮的回调函数	*/
-	void back(CCObject* pSender);
+	
 };

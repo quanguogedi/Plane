@@ -181,3 +181,18 @@ void CGameManager::OpenPauseLayer()
 }
 
 
+
+void CGameManager::OpenGiftBagLayer()
+{
+    if (!mGiftBagLayer)
+    {
+        mGiftBagLayer = (GiftBagLayer*)CCBManager::LoadCCBByNameAndLoader("GiftBagLayer", GiftBagLayerLoader::loader());
+        mGiftBagLayer->SetDelegate(this);
+        addChild(mGiftBagLayer);
+        
+    }
+    
+    ShowLayer(mGiftBagLayer);
+}
+
+

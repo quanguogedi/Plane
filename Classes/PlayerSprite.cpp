@@ -187,6 +187,7 @@ void CPlayerSprite::destroy(CCNode *pSender)
 	if(m_iLife <= 0)
 	{
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("res/Music/GameOver.mp3");
+        DataManager::GetInstance()->SetResult(false);
 		CGameEvents::startFlipInterface(GAME_OVER);
 	}
 	else 

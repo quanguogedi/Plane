@@ -37,6 +37,13 @@ bool CGameLevel::init()
         this->addChild(pSprite);
         
         InitBottomLayer();
+        
+        if (DataManager::GetInstance()->GetLevelState())
+        {
+            DataManager::GetInstance()->SetLevelState(false);
+            OpenUpgradeLayer();
+            
+        }
 	
 		bRet = true;
 	}
@@ -75,9 +82,17 @@ void CGameLevel::OpenBuyDiamondLayer()
     
 }
 
-void CGameLevel::OpenGiftLayer()
+void CGameLevel::OpenGiftBagLayer()
 {
-    CCLog("OpenGiftLayer");
+    if (!mGiftBagLayer)
+    {
+        mGiftBagLayer = (GiftBagLayer*)CCBManager::LoadCCBByNameAndLoader("GiftBagLayer", GiftBagLayerLoader::loader());
+        mGiftBagLayer->SetDelegate(this);
+        addChild(mGiftBagLayer);
+        
+    }
+    
+    ShowLayer(mGiftBagLayer);
 }
 
 void CGameLevel::OpenUpgradeLayer()

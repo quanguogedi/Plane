@@ -11,6 +11,7 @@
 #include "BuyDiamondLayer.h"
 #include "BuyPowerLayer.h"
 #include "PlanAttributeLayer.h"
+#include "GiftBagLayer.h"
 
 class CGameMenu : public CBaseScene
 {
@@ -26,7 +27,7 @@ public:
     virtual void OpenBuyPowerLayer();
     virtual void OpenBuyDiamondLayer();
     //BuyDiamondLayer调用
-    virtual void OpenGiftLayer();
+    virtual void OpenGiftBagLayer();
     virtual void OpenBuyDiamondSureLayer();
     //MenuBottomLayer调用
     virtual void OpenUpgradeLayer();
@@ -45,6 +46,7 @@ private:
     BuyPowerLayer * mBuyPowerLayer;
     AchievementLayer* mAchievementLayer;
     SettingsLayer* mSettingsLayer;
+    GiftBagLayer * mGiftBagLayer;
     
     
 };

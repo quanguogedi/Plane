@@ -10,6 +10,7 @@
 #include "PlanAttributeLayer.h"
 #include "PlaneDisplayLayer.h"
 #include "StartGameLayer.h"
+#include "GiftBagLayer.h"
 
 class CGameLevel : public CBaseScene
 {
@@ -29,7 +30,7 @@ public:
     virtual void OpenBuyPowerLayer();
     virtual void OpenBuyDiamondLayer();
     //BuyDiamondLayer调用
-    virtual void OpenGiftLayer();
+    virtual void OpenGiftBagLayer();
     //MenuBottomLayer调用
     virtual void OpenUpgradeLayer();
     
@@ -62,6 +63,7 @@ private:
     BuyPowerLayer * mBuyPowerLayer;
     UpgradeLayer * mUpgradeLayer;
     StartGameLayer * mStartGameLayer;
+    GiftBagLayer * mGiftBagLayer;
     
     
 	CCParticleSun* m_pSun;		///<太阳特效

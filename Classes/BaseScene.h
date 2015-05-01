@@ -15,7 +15,7 @@
 #include <stack>
 
 
-class CBaseScene : public CCLayer,public CCBDelegate
+class CBaseScene : public CCLayer,public CCBDelegate,public CCKeypadDelegate
 {
 public:
     
@@ -29,6 +29,8 @@ public:
     virtual void onExit();
     /**	创建函数	*/
     CREATE_FUNC(CBaseScene);
+    virtual void keyBackClicked();
+    
     
     virtual void HideLayer();
     

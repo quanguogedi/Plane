@@ -76,9 +76,17 @@ void CGameMenu::OpenBuyDiamondSureLayer()
 
 }
 
-void CGameMenu::OpenGiftLayer()
+void CGameMenu::OpenGiftBagLayer()
 {
-    CCLog("OpenGiftLayer");
+    if (!mGiftBagLayer)
+    {
+        mGiftBagLayer = (GiftBagLayer*)CCBManager::LoadCCBByNameAndLoader("GiftBagLayer", GiftBagLayerLoader::loader());
+        mGiftBagLayer->SetDelegate(this);
+        addChild(mGiftBagLayer);
+        
+    }
+    
+    ShowLayer(mGiftBagLayer);
 }
 
 void CGameMenu::OpenUpgradeLayer()

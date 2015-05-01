@@ -9,6 +9,7 @@
 #include "GameMessage.h"
 #include "GameEvents.h"
 #include "PauseLayer.h"
+#include "GiftBagLayer.h"
 
 using namespace cocos2d;
 
@@ -42,6 +43,7 @@ public:
     
     //GameMenuLayer调用
     virtual void OpenPauseLayer();
+    virtual void OpenGiftBagLayer();
 private:
 	/**	更新函数	*/
 	void update(float dt);
@@ -55,6 +57,8 @@ private:
 	static CItemManager *m_pItemManager;		///<物品管理
 	static CGameMap *m_pGameMap;				///<游戏地图
 	CGameMessage *m_pGameMessage;				///<玩家信息
+    
+    GiftBagLayer * mGiftBagLayer;
     
     
     PauseLayer * mPauseLayer;

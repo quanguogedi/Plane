@@ -26,6 +26,15 @@ void DataManager::Init()
     mMissileLevel = 0;
     mArmorLevel = 0;
     mWingPlaneLevel = 0;
+    mGameLevel = 0;
+    mScore = 0;
+    mMaxHp = 0;
+    mHp = 0;
+    mDiamond = 0;
+    mStar = 0;
+    mResult = false;
+    mLevelState = false;
+    
     
     SetPlayerType(1);
 }
@@ -36,6 +45,10 @@ void DataManager::ResetData()
     mScore = 0;
     mMaxHp = 5;
     mHp = 5;
+    mDiamond = 0;
+    mStar = 0;
+    mResult = false;
+    mLevelState = false;
 }
 
 
@@ -199,7 +212,49 @@ float DataManager::GetHpPCT()
     return (float)mHp/mMaxHp;
 }
 
+void DataManager::SetDiamond(int _diamond)
+{
+    mDiamond = _diamond;
+}
 
+int DataManager::GetDiamond()
+{
+    return mDiamond;
+}
+
+
+
+void DataManager::SetStar(int _star)
+{
+    mStar = _star;
+}
+int DataManager::GetStar()
+{
+    return mStar;
+}
+
+
+
+
+void DataManager::SetResult(bool _result)
+{
+    mResult = _result;
+}
+
+bool DataManager::GetResult()
+{
+    return mResult;
+}
+
+void DataManager::SetLevelState(bool _state)
+{
+    mLevelState = _state;
+}
+
+bool DataManager::GetLevelState()
+{
+    return mLevelState;
+}
 
 void DataManager::PlayBMG(MusicType _type,bool _repeat)
 {
@@ -208,9 +263,9 @@ void DataManager::PlayBMG(MusicType _type,bool _repeat)
     if (mt_none == _type || currType == _type) return;
     
     mBgMusicType = _type;
-//    CCString * str = (CCString*)LocalStaticData::GetInstance()->GetMusicDictionary()->objectForKey(_type);
-//    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
-//    SimpleAudioEngine::sharedEngine()->playBackgroundMusic(str->getCString(),mBool);
+    //    CCString * str = (CCString*)LocalStaticData::GetInstance()->GetMusicDictionary()->objectForKey(_type);
+    //    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+    //    SimpleAudioEngine::sharedEngine()->playBackgroundMusic(str->getCString(),mBool);
     
 }
 
@@ -219,9 +274,10 @@ int DataManager::PlayEffect(MusicType _type,bool _repeat)
     if (!LocalArchiveData::GetInstance()->mSoundEnable)return 0;
     if (mt_none == _type) return -1;
     return 0;
-//    CCString * str = (CCString*)LocalStaticData::GetInstance()->GetMusicDictionary()->objectForKey(_type);
-//    return  SimpleAudioEngine::sharedEngine()->playEffect(str->getCString(),mBool);
+    //    CCString * str = (CCString*)LocalStaticData::GetInstance()->GetMusicDictionary()->objectForKey(_type);
+    //    return  SimpleAudioEngine::sharedEngine()->playEffect(str->getCString(),mBool);
 }
+
 
 
 

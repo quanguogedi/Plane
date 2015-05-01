@@ -277,7 +277,7 @@
 												<string>Block</string>
 												<key>value</key>
 												<array>
-													<string>GePowerSelecor</string>
+													<string>GetPowerSelecor</string>
 													<integer>1</integer>
 												</array>
 											</dict>
@@ -323,6 +323,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>

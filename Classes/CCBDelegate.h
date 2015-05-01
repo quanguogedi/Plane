@@ -54,7 +54,8 @@ public:
     //GameMenuLayer调用
     virtual void OpenPauseLayer(){};
     
-    
+    //
+    virtual void OpenGiftBagLayer(){};
     
 };
 

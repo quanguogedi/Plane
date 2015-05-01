@@ -58,7 +58,7 @@ void BuyDiamondLayer::GiftSelector(CCObject *pSender, CCControlEvent pCCControlE
 {
     if (mDelegate)
     {
-        mDelegate->OpenGiftLayer();
+        mDelegate->OpenGiftBagLayer();
     }
 }
 

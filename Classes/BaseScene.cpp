@@ -34,6 +34,7 @@ bool CBaseScene::init()
     {
         CC_BREAK_IF(!CCLayer::init());
     } while (0);
+    setKeypadEnabled(true);
 
     return true;
 }
@@ -49,6 +50,11 @@ void CBaseScene::onExit()
 {
     CCLayer::onExit();
     unscheduleUpdate();
+}
+
+void CBaseScene::keyBackClicked()
+{
+    HideLayer();
 }
 
 void CBaseScene::ShowLayer(CCBLayer *_layer)
