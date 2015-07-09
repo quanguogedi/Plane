@@ -18,19 +18,19 @@ bool LevelBottomLayer::init()
     }
     
     mIsTheLast = true;
+    m_moveSpeed = 0;
+    m_moveTime = 0;
+    m_lastPos = CCPointZero;
+    m_beginPos = CCPointZero;
     
-    mActionTag = 0;
+    
     mContainer = (LevelContainerLayer*)CCBManager::LoadCCBByNameAndLoader("LevelContainerLayer", LevelContainerLayerLoader::loader());
     mContainer->RefreshUI();
     
     CCSize size = CCDirector::sharedDirector()->getWinSize();
     mScrollView = CCScrollView::create(size, mContainer);
-//    mScrollView->setTouchEnabled(true);
-//    mScrollView->setDelegate(this);
-//    mScrollView->setBounceable(true);
-//    scrollView->setTouchPriority(-130);
-//    mScrollView->setDirection(kCCScrollViewDirectionVertical);
-    schedule(schedule_selector(LevelBottomLayer::UpdateContainer));
+    schedule(schedule_selector(LevelBottomLayer::InertiaMotion));
+    
     addChild(mScrollView);
     return true;
 }
@@ -54,38 +54,46 @@ bool LevelBottomLayer::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *
     
     CCPoint startPos = pTouch->getLocation();
     mStartRect = CCRectMake(startPos.x-10, startPos.y-10, 20, 20);
-//    if (mContainer->getActionByTag(mActionTag))
-//    {
-//        mContainer->stopActionByTag(mActionTag);
-//    }
     
+    mContainer->stopAllActions();
+    m_beginPos = startPos;
+    m_lastPos = startPos;
+    m_moveTime = 0;
+    m_moveSpeed = 0;
+    m_dragEnd = false;
+  
     return true;
 }
 
 void LevelBottomLayer::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 {
     
-    mDisY = pTouch->getDelta().y;
+    CCPoint currPos = pTouch->getLocation();
+    
+    
+    mDisY = currPos.y - m_lastPos.y;
    
     float posy = mContainer->getPositionY();
-    if (posy + mDisY > 80 )
+    
+    posy += mDisY;
+    
+    if (posy <= 110 && posy >= mScrollView->getViewSize().height - mContainer->getContentSize().height - 110)
     {
-        mDisY = 80 - posy;
-        
-    }else if (posy + mDisY < mScrollView->getViewSize().height -mContainer->getContentSize().height - 80 )
+        mContainer->setPositionY(posy);
+        m_lastPos = currPos;
+    }
+   
+    if (m_moveTime > 0.2f)
     {
-        mDisY = mScrollView->getViewSize().height -mContainer->getContentSize().height - 80 -posy;
+        m_moveTime = 0.0f;
+        m_beginPos = currPos;
     }
     
-    mContainer->setPositionY(mContainer->getPositionY() + mDisY);
 }
 
 void LevelBottomLayer::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 {
     CCPoint endPos = pTouch->getLocation();
-    
-    
-    
     
     
     if (mStartRect.containsPoint(endPos))
@@ -106,92 +114,78 @@ void LevelBottomLayer::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *
             }
         }
     }
-   
-   
-    
-//    if (adjustOffset())
-//    {
-//        float a = mDisY/0.05;
-        
-        
-        float posy = mContainer->getPositionY();
-        float dis = mDisY*30;
-//        if (posy + dis > 80 )
-//        {
-//            dis = 80 - posy;
-//        }else if (posy + dis < mScrollView->getViewSize().height -mContainer->getContentSize().height - 80 )
-//        {
-//            dis = mScrollView->getViewSize().height -mContainer->getContentSize().height - 80 -posy;
-//        }
-    
-        CCLog("==============dis = %.2f",dis);
-        
-//        CCMoveBy * speedAction = CCMoveBy::create(fabsf(dis)/1300,ccp( 0,dis));
-//        float time = sqrtf(2*dis/a);
-       float time = fabsf(dis) / 1500 ;
-         CCLog("==============dis = %.2f========%.2f",dis,time);
-//        float time = fabsf(dis) / 2000 ;
-//        if (time > 0.4)
-//        {
-//            time = 0.4;
-//        }
-        CCMoveBy * speedAction = CCMoveBy::create(time,ccp( 0,dis));
-        mActionTag = mContainer->runAction(CCEaseExponentialOut::create(speedAction))->getTag();
-//        mActionTag =  mContainer->runAction(CCSequence::createWithTwoActions(CCEaseExponentialOut::create(speedAction), CCCallFunc::create(this, callfunc_selector(LevelBottomLayer::adjustOffset))))->getTag();
-        
 
-//    }
-    mDisY = 0;
-    mActionTag = 0;
+    if(m_moveTime == 0.0)
+    {
+        m_moveSpeed = 0.0f;
+    }
+    else
+    {
+        m_moveSpeed = (endPos.y - m_beginPos.y)/m_moveTime;
+    }
+    
+    if(m_moveSpeed > -300.f && m_moveSpeed < 300.f)
+    {
+        m_moveSpeed = 0;
+    }
+    
+    m_lastPos = endPos;
+    
+    m_dragEnd = true;
     
 }
 
-void LevelBottomLayer::UpdateContainer(float _time)
+void LevelBottomLayer::InertiaMotion(float _time)
 {
-    bool flag = true;
-    if (mContainer->getPositionY() > 0)
+      m_moveTime += _time;
+    
+    if (!m_dragEnd)
     {
-        flag = false;
-        if (mContainer->getActionByTag(mActionTag))
-        {
-            mContainer->stopActionByTag(mActionTag);
-        }
-        mScrollView->setContentOffset(CCPointZero,true);
+        return;
     }
-    else if (mContainer->getPositionY() < mScrollView->getViewSize().height -mContainer->getContentSize().height)
+    
+  
+    
+    if(fabs(m_moveSpeed) < 200)
     {
-//        flag = false;
-        if (mContainer->getActionByTag(mActionTag))
+        m_dragEnd= false;
+        if (mContainer->getPositionY() > 0)
         {
-            mContainer->stopActionByTag(mActionTag);
+            CCActionInterval * act = CCMoveTo::create(mContainer->getPositionY()/500, CCPointMake(0, 0));
+            mContainer->runAction(CCEaseSineOut::create(act));
+            m_moveSpeed = 0;
+            m_moveTime = 0;
+            
         }
-        mScrollView->setContentOffset(CCPointMake(0,mScrollView->getViewSize().height-mContainer->getContentSize().height),true);
+        
+        
+        if (mContainer->getPositionY() < mScrollView->getViewSize().height - mContainer->getContentSize().height)
+        {
+            float dis = mScrollView->getViewSize().height - mContainer->getContentSize().height - mContainer->getPositionY();
+            CCActionInterval * act = CCMoveTo::create(dis/500, CCPointMake(0, mScrollView->getViewSize().height - mContainer->getContentSize().height));
+            mContainer->runAction(CCEaseSineOut::create(act));
+            m_moveSpeed = 0;
+            m_moveTime = 0;
+        }
+        return ;
     }
-//    return flag;
+    
+    double y = mContainer->getPositionY();
+    y = y + m_moveSpeed *_time;
+  
+    
+    if(y >= 110 || y <= mScrollView->getViewSize().height - mContainer->getContentSize().height - 110)
+    {
+        m_moveSpeed = 0;
+        return ;
+    }
+    mContainer -> setPositionY(y);
+    m_moveSpeed -= m_moveSpeed * _time*1.2;
 }
 
 bool LevelBottomLayer::adjustOffset()
 {
-    bool flag = true;
-    if (mContainer->getPositionY() > 0)
-    {
-        flag = false;
-        if (mContainer->getActionByTag(mActionTag))
-        {
-            mContainer->stopActionByTag(mActionTag);
-        }
-        mScrollView->setContentOffset(CCPointZero,true);
-    }
-    else if (mContainer->getPositionY() < mScrollView->getViewSize().height -mContainer->getContentSize().height)
-    {
-        flag = false;
-        if (mContainer->getActionByTag(mActionTag))
-        {
-            mContainer->stopActionByTag(mActionTag);
-        }
-        mScrollView->setContentOffset(CCPointMake(0,mScrollView->getViewSize().height-mContainer->getContentSize().height),true);
-    }
-    return flag;
+   
 }
 
 

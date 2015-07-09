@@ -27,7 +27,7 @@ public:
     virtual void scrollViewDidScroll(cocos2d::extension::CCScrollView *view);
     virtual void scrollViewDidZoom(cocos2d::extension::CCScrollView *view);
     
-    void UpdateContainer(float _time);
+    void InertiaMotion(float _time);
    
     
 private:
@@ -40,9 +40,13 @@ private:
     CCScrollView * mScrollView;
     LevelContainerLayer * mContainer;
     
-    float mDisY;
-    int mActionTag;
+    float m_moveTime;
+    float m_moveSpeed;
+    CCPoint m_lastPos;
+    CCPoint m_beginPos;
     
+    float mDisY;
+    bool m_dragEnd;
 };
 
 
