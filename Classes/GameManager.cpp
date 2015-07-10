@@ -81,7 +81,7 @@ bool CGameManager::init()
 		this->addChild(m_pEnemyManager, 3, 3);
 
 		/**	添加玩家	*/
-		m_pPlayer = (CPlayerSprite*)CPlayerSprite::create(0);
+        m_pPlayer = (CPlayerSprite*)CPlayerSprite::create(DataManager::GetInstance()->GetPlayerType());
 		this->addChild(m_pPlayer, 4, 4);
 
 		/**	添加信息框	*/

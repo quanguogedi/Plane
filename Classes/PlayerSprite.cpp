@@ -25,7 +25,9 @@ bool CPlayerSprite::init(int iType)
 	do{
 		CC_BREAK_IF(! CCLayer::init());
 
-		m_pSprite = CCSprite::createWithSpriteFrameName("zhuji_01_a.png");
+        CCString * frameName = CCString::createWithFormat("plane_%02d.png",iType);
+        
+		m_pSprite = CCSprite::createWithSpriteFrameName(frameName->getCString());
 //        m_pSprite = CCSprite::create("new/plane_01.png");
 		this->addChild(m_pSprite, 1);
 		
