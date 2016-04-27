@@ -216,7 +216,7 @@ void DataManager::PlayBMG(MusicType _type,bool _repeat)
 
 int DataManager::PlayEffect(MusicType _type,bool _repeat)
 {
-    if (!LocalArchiveData::GetInstance()->mSoundEnable)return;
+    if (!LocalArchiveData::GetInstance()->mSoundEnable)return 0;
     if (mt_none == _type) return -1;
     return 0;
 //    CCString * str = (CCString*)LocalStaticData::GetInstance()->GetMusicDictionary()->objectForKey(_type);

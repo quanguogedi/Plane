@@ -36,7 +36,7 @@ SEL_MenuHandler PauseLayer::onResolveCCBCCMenuItemSelector(CCObject * pTarget, c
     CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "OpenMusicSelector", PauseLayer::OpenMusicSelector);
     CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "CloseMusicSelector", PauseLayer::CloseMusicSelector);
     CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "BuyKillerSelector", PauseLayer::BuyKillerSelector);
-    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "ButShieldSelector", PauseLayer::ButShieldSelector);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "ButShieldSelector", PauseLayer::BuyShieldSelector);
     
     return false;
 }
@@ -90,7 +90,7 @@ void PauseLayer::BuyKillerSelector(cocos2d::CCObject *pSender, CCControlEvent pC
 {
     
 }
-void PauseLayer::ButShieldSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
+void PauseLayer::BuyShieldSelector(cocos2d::CCObject *pSender, CCControlEvent pCCControlEvent)
 {
     
 }

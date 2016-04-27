@@ -54,7 +54,7 @@ SEL_MenuHandler GameMenuLayer::onResolveCCBCCMenuItemSelector(CCObject * pTarget
 void GameMenuLayer::RefreshUI()
 {
     RefreshProps();
-    RefreshScore()
+    RefreshScore();
     
 }
 void GameMenuLayer::RefreshProps()
