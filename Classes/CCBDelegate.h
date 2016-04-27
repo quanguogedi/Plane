@@ -52,7 +52,7 @@ public:
     virtual void OpenStartGameLayer(){};
     
     //GameMenuLayer调用
-    virtual void OpenPauseLayer();
+    virtual void OpenPauseLayer(){};
     
     
     
